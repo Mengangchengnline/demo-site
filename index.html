@@ -276,12 +276,11 @@
 
   .sentry-ring {
     fill: none;
-    stroke: rgba(0,243,255,0.5);
+    stroke: #000;
     stroke-width: 1.5;
     stroke-dasharray: 10 15;
     transform-origin: center;
     transition: all 0.4s;
-    filter: drop-shadow(0 0 3px rgba(0,243,255,0.3));
   }
 
   .sentry-rhombus {
@@ -307,18 +306,18 @@
   .sentry-eye.idle .sentry-glint { opacity: 1; }
 
   .sentry-eye.processing .sentry-ring {
-    stroke: var(--accent-cyan);
+    stroke: #FF8C00;
     stroke-width: 3;
     stroke-dasharray: 60 0;
     animation: ringSpinFast 0.5s linear infinite;
   }
   .sentry-eye.processing .sentry-rhombus {
     fill: #ffffff;
-    stroke: var(--accent-cyan);
+    stroke: #00f3ff;
     animation: rhombusPulse 0.2s infinite alternate;
   }
   .sentry-eye.processing .sentry-glint {
-    fill: var(--accent-cyan);
+    fill: #00f3ff;
     r: 2;
     opacity: 1;
   }
@@ -1090,8 +1089,8 @@
     text-shadow: 
       0 0 20px rgba(255,140,0,0.9),
       0 0 40px rgba(255,140,0,0.5),
-      3px 3px 0 rgba(0,0,0,0.8),
-      -2px -2px 0 rgba(255,60,0,0.4),
+      3px 3px 0 rgba(0,243,255,0.7),
+      -3px -3px 0 rgba(255,0,64,0.5),
       0 4px 15px rgba(0,0,0,0.9);
     margin-bottom: 2vh;
     color: #FF8C00;
