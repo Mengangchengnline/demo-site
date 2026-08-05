@@ -4248,7 +4248,7 @@
         window.addEventListener('resize', resize);
         resize();
 
-        const TRAIL_LEN = 40;
+        const TRAIL_LEN = 20;
         let trail = [];
         let mouseX = -100, mouseY = -100;
         let smoothX = -100, smoothY = -100;
@@ -4280,8 +4280,8 @@
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            smoothX += (mouseX - smoothX) * 0.15;
-            smoothY += (mouseY - smoothY) * 0.15;
+            smoothX += (mouseX - smoothX) * 0.25;
+            smoothY += (mouseY - smoothY) * 0.25;
 
             trail.unshift({ x: smoothX, y: smoothY });
             if (trail.length > TRAIL_LEN) trail.pop();
@@ -4343,12 +4343,12 @@
                 ctx.fill();
                 ctx.shadowBlur = 0;
 
-                const grad = ctx.createRadialGradient(tip.x, tip.y, 0, tip.x, tip.y, 80);
+                const grad = ctx.createRadialGradient(tip.x, tip.y, 0, tip.x, tip.y, 50);
                 grad.addColorStop(0, 'rgba(0, 243, 255, 0.06)');
                 grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
                 ctx.fillStyle = grad;
                 ctx.beginPath();
-                ctx.arc(tip.x, tip.y, 80, 0, Math.PI * 2);
+                ctx.arc(tip.x, tip.y, 50, 0, Math.PI * 2);
                 ctx.fill();
             }
 
