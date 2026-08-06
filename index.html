@@ -652,45 +652,70 @@
 
   .source-doc-title {
     margin: 0 0 1.5rem;
-    padding-bottom: 0.8rem;
+    padding: 0.15rem 0 0.85rem 0.85rem;
     color: #FF8C00;
     font-size: 1.5rem;
     line-height: 1.35;
+    letter-spacing: 0.08em;
+    border-left: 3px solid rgba(255, 140, 0, 0.78);
     border-bottom: 1px solid rgba(255, 140, 0, 0.24);
     overflow-wrap: anywhere;
   }
 
   .source-doc-body {
     color: #d0d0d0;
-    font-size: 1rem;
-    line-height: 1.8;
+    font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    font-size: 0.96rem;
+    font-weight: 400;
+    line-height: 1.88;
+    letter-spacing: 0.015em;
   }
 
   .source-doc-paragraph {
-    margin: 0.5rem 0;
+    margin: 0.68rem 0;
     min-height: 1.8em;
     white-space: pre-wrap;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    text-align: justify;
+    text-justify: inter-ideograph;
   }
 
   .source-doc-paragraph[data-source-style^="Heading"] {
-    margin-top: 1.45rem;
+    margin-top: 1.55rem;
+    margin-bottom: 0.65rem;
     color: #f2f2f2;
     font-weight: 800;
+    line-height: 1.45;
+    text-align: left;
+    text-indent: 0;
   }
 
   .source-doc-paragraph[data-source-style="Heading 1"] {
     font-size: 1.35rem;
+    color: #FF8C00;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.22);
   }
 
   .source-doc-paragraph[data-source-style="Heading 2"] {
     font-size: 1.2rem;
     color: #FF8C00;
+    padding-left: 0.65rem;
+    border-left: 2px solid rgba(255, 140, 0, 0.62);
   }
 
   .source-doc-paragraph[data-source-style="Heading 3"] {
     font-size: 1.08rem;
     color: #e7b36d;
+    padding-left: 0.55rem;
+    border-left: 1px solid rgba(231, 179, 109, 0.55);
+  }
+
+  .source-doc-paragraph[data-source-style="Heading 4"] {
+    font-size: 1.03rem;
+    color: #e7b36d;
+    padding-left: 0.55rem;
+    border-left: 1px solid rgba(231, 179, 109, 0.45);
   }
 
   .source-doc-image {
@@ -699,6 +724,210 @@
     height: auto;
     margin: 1rem auto;
     border: 1px solid rgba(255, 140, 0, 0.28);
+  }
+
+  .embedded-docx-host {
+    margin-top: 4vh;
+    padding-top: 3vh;
+    border-top: 1px solid rgba(255, 140, 0, 0.22);
+  }
+
+  .embedded-docx-text {
+    max-width: 82ch;
+    margin-left: auto;
+    margin-right: auto;
+    padding: clamp(1rem, 2vw, 1.65rem);
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.045), rgba(0, 243, 255, 0.018));
+    border: 1px solid rgba(255, 140, 0, 0.13);
+    border-left: 2px solid rgba(255, 140, 0, 0.5);
+    box-shadow: inset 0 0 18px rgba(255, 140, 0, 0.025);
+  }
+
+  .embedded-docx-text + .embedded-docx-text {
+    margin-top: 4vh;
+    padding-top: 3vh;
+    border-top: 1px solid rgba(255, 140, 0, 0.18);
+  }
+
+  .embedded-docx-text .source-doc-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .embedded-docx-text .source-doc-body {
+    font-size: 0.94rem;
+    line-height: 1.9;
+  }
+
+  .dh-mid-text .embedded-docx-text .source-doc-title {
+    font-size: 1.15rem;
+  }
+
+  .dh-mid-text .embedded-docx-text .source-doc-body {
+    font-size: 0.9rem;
+    line-height: 1.82;
+  }
+
+  .dh-mid-text .embedded-docx-text {
+    max-width: none;
+    padding: 0.9rem 1rem;
+  }
+
+  #dir-content-magic .source-doc-body {
+    font-size: 0.9rem;
+    line-height: 1.82;
+  }
+
+  .embedded-docx-text .source-doc-paragraph[data-source-style="Normal"],
+  #dir-content-magic .source-doc-paragraph[data-source-style="Normal"] {
+    text-indent: 2em;
+  }
+
+  .source-doc-paragraph[data-source-style^="Heading"] + .source-doc-paragraph[data-source-style="Normal"] {
+    margin-top: 0.35rem;
+  }
+
+  .source-doc-paragraph:empty {
+    min-height: 0.8rem;
+    margin: 0;
+  }
+
+  #dir-content-mengyang .dh-col-mid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  #dir-content-mengyang .dh-col-mid > .dh-mid-text {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  #dir-content-mengyang .dh-col-mid > div:last-child {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 2vh;
+    padding: 0.7rem;
+    background: linear-gradient(145deg, rgba(255, 140, 0, 0.08), rgba(0, 243, 255, 0.035));
+    border: 1px solid rgba(255, 140, 0, 0.32);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.08), inset 0 0 12px rgba(0, 243, 255, 0.025);
+  }
+
+  #dir-content-mengyang .dh-col-mid > div:last-child img {
+    width: 100%;
+    max-height: 46vh;
+    object-fit: contain;
+  }
+
+  #dir-content-magic .dh-mid-split {
+    grid-template-columns: minmax(210px, 0.82fr) minmax(0, 1.38fr);
+    align-items: start;
+  }
+
+  #dir-content-alchemy .dh-mid-split {
+    grid-template-columns: minmax(190px, 0.68fr) minmax(0, 1.52fr);
+    align-items: start;
+  }
+
+  #dir-content-magic .dh-mid-image,
+  #dir-content-alchemy .dh-mid-image {
+    position: sticky;
+    top: 2vh;
+    align-self: start;
+    padding: 0.7rem;
+    background: linear-gradient(145deg, rgba(255, 140, 0, 0.08), rgba(0, 243, 255, 0.035));
+    border: 1px solid rgba(255, 140, 0, 0.32);
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.08), inset 0 0 12px rgba(0, 243, 255, 0.025);
+  }
+
+  #dir-content-magic .dh-mid-image img {
+    max-height: 46vh;
+  }
+
+  #dir-content-alchemy .dh-mid-image img {
+    max-height: 62vh;
+  }
+
+  #dir-content-magic .dh-mid-text,
+  #dir-content-alchemy .dh-mid-text {
+    justify-content: flex-start;
+  }
+
+  .embedded-docx-text .source-doc-image {
+    width: auto;
+    max-width: min(100%, 720px);
+    max-height: 68vh;
+    margin: 1.5rem auto;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .embedded-docx-text {
+      max-width: none;
+      padding: 0.85rem 0.9rem;
+    }
+
+    .embedded-docx-text .source-doc-body,
+    .dh-mid-text .embedded-docx-text .source-doc-body,
+    #dir-content-magic .source-doc-body {
+      font-size: 0.88rem;
+      line-height: 1.76;
+    }
+
+    .source-doc-title {
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+    }
+
+    .source-doc-paragraph {
+      margin: 0.58rem 0;
+    }
+
+    #dir-content-mengyang .dh-col-mid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    #dir-content-mengyang .dh-col-mid > div:last-child {
+      grid-column: 1;
+      grid-row: 1;
+      position: relative;
+      top: auto;
+      width: min(100%, 420px);
+      margin: 0 auto;
+    }
+
+    #dir-content-mengyang .dh-col-mid > .dh-mid-text {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    #dir-content-magic .dh-mid-split,
+    #dir-content-alchemy .dh-mid-split {
+      grid-template-columns: 1fr;
+    }
+
+    #dir-content-magic .dh-mid-image,
+    #dir-content-alchemy .dh-mid-image {
+      position: relative;
+      top: auto;
+      width: min(100%, 420px);
+      margin: 0 auto;
+    }
+
+    #dir-content-magic .dh-mid-image img,
+    #dir-content-alchemy .dh-mid-image img {
+      max-height: 38vh;
+    }
+  }
+
+  .dh-mid-text .source-doc-paragraph[data-source-style^="Heading"] {
+    text-indent: 0;
+    color: #FF8C00;
+    font-weight: 900;
   }
 
   #loading-overlay {
@@ -2623,7 +2852,6 @@
       <a href="#" class="nav-trigger panel-link" data-dir="corruption">现实腐蚀</a>
       <a href="#" class="nav-trigger panel-link" data-dir="alchemy">炼金术</a>
       <a href="#" class="nav-trigger panel-link" data-dir="god">神</a>
-      <a href="#" class="nav-trigger panel-link" data-dir="source-docs">原始文档全文</a>
     </div>
   </div>
 
@@ -3227,9 +3455,44 @@
                       <div class="dh-mid-image"><img src="d3b9cc099a3efee31218c5b8aa48a554.jpg" alt="神秘术"></div>
                       <div class="dh-mid-text">
                           <h2>神秘术</h2>
-                          <p>神秘术Theurgy，又称魔法、巫术、神通术，是一切由术式进行激发且不完全服从物理规律的特殊能力之总称。神秘术囊括了常人眼中绝大多数的"魔法"，例如火球术、荧光咒、漂浮咒、隔空取物、变形术、瞬间移动等等。得益于宽泛的定义，神秘术可谓是包罗万象，上到撕裂空间穿越时间，下到凭空变出一点电火花，都算是神秘术。</p>
-                          <p>你可以把神秘术类比成代码，那么神秘术士就是程序员，程序员写出来的程序则是神秘术式。神秘术士用主观意识控制神秘术，编织出神秘术式以特定的方式作用于宏观世界，这个过程叫施术。施术需要承担精神负荷，这个负荷的量通常与神秘术的复杂度和强度呈正相关。</p>
-                          <p>术式刻章类似一个只能安装一个APP的手机，那唯一的APP就是铭刻在它身上的神秘术式。通过注入能量将其激发，它便会按照既定的程序释放指定的术式。制作一个术式刻章至少包含三个术式：用来实现其功能的术式A、将A记录在刻章上的铭记术式B、接受能量并激发A的激活术式C。</p>
+                          <div class="source-doc-body">
+                              <p class="source-doc-paragraph" data-source-style="Heading 1">神秘术</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">下面的内容可以帮助你更全面的理解神秘术。当然，如果您不想在上面花时间的话，您只需把神秘术和魔法画等号，然后打开另一个你想阅读的文档。</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">定义</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">神秘术Theurgy，又称魔法、巫术、神通术，是一切由术式进行激发且不完全服从物理规律的特殊能力之总称。神秘术囊括了常人眼中绝大多数的“魔法”，例如火球术、荧光咒、漂浮咒、隔空取物、变形术、瞬间移动等等等……得益于宽泛的定义，神秘术可谓是包罗万象，上到撕裂空间穿越时间，下到凭空变出一点电火花，都算是神秘术。</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">神秘术士和神秘术式</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">你可以把神秘术类比成代码，那么神秘术士就是程序员，程序员写出来的程序则是神秘术式。神秘术用的自己的主观意识控制神秘术，编织出神秘术式以特定的方式作用于宏观世界，这个过程叫施术，就像程序员在编程。施术需要承担精神负荷，这个负荷的量通常与神秘术的复杂度和强度呈正相关，一些特定的神秘术还有额外的代价。神秘术通常由强度较高者覆盖较低者，</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">有时会产生干涉，可能相互抵消、融合，或引发不可预测的异常现象。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">神秘术士并非天生就会神秘术，但他们天生就是神秘术士。是的，神秘术士对神秘术的掌握需要后天培养，但成为神秘术的资格和他们能释放的术式却受到基因的掣肘。至于其中的规律，以下是我们已经摸清的：</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">1神秘术士的直系后代大概率是神秘术士，非神秘术士的直系后代也可能是神秘术士</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">2一个术士所掌握的神秘术总由一个“主干”和若干个数量有限的“分支”决定，分支总是和主干有明显关联的</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">3主干总是不变的，但分支在经历剧烈的情感冲击或在某些外因的作用下会发生变化</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">术式结构/结构型神秘术</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">首先，小标题中的两个词实际上所指的是同一物。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">结构型神秘术是一种很特殊的神秘术，它并不由神秘术士释放，而是由某个特定的复杂结构进行施术，尽管有时这些结构的组成包含神秘术士。最有名的结构型神秘术莫过于炼金术，一种涉及到物质转化的神秘术。</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">术式铭刻和术式刻章</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">这世界上的神秘术士很少，但想用神秘术的人很多。所以，我们发明了术式刻章。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">术式刻章类似一个只能安装一个APP的手机，那唯一的APP就是铭刻在它身上的神秘术式。通过注入能量将其激发，它便会按照既定的程序释放指定的术式，在这个过程里，你的主观意识不会对它造成任何影响——好处是不用担心你自己的状态影响术式效果，缺点是无法依照你的想法对术式效果进行调整，同时也抛弃了唯心爆发的可能。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">制作一个术式刻章至少包含三个术式：用来实现其功能的术式A、将A记录在刻章上的神秘术式B（又称铭记术式）、接受能量并激发A的神秘术式C（又称激活术式），其中，释放B和C的步骤就被称作术式铭刻。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">术式铭刻是一种非常难以掌握的技能。首先，铭记术式并不是固定的，不同的A需要不同的B，同样的A在威力不同时也需要对B进行调整，而因为A和B必须同时由同一人释放，但神秘术又会受到主观意识的影响，所以，经常出现“专注的调整B，结果因为注意力全在B上导致A变了”的尬尴情况。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">因为上述的原因，术式铭刻在过去的很多年里都是神秘术大师的专属技能，术式刻章也是一种及其罕见且昂贵的物品。即便我们后来找到了铭记术式对应的术式结构，但神秘术式无法被记录的问题依然阻碍着刻章的量产化。直到有一天，有人搭建出了一种全新的术式结构——影印术式。影印术式可以“记录”并“回放”其他术式，让术式刻章终于有了量产化的希望。现如今，虽然依旧需要不断尝试对应的铭刻术式结构，但只要找出那个结构，这种术式刻章就可以源源不断的量产。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">术式刻章固然好，但是依旧存在缺陷。首当其冲的便是刻章大多存在“保质期”。刻章在被制造出来一段时间后就会无效，而且随着激发次数的增加，他释放术式的威力也会渐渐下降，部分甚至是一次性产品。我们还必须注意到的是术式刻章的饱和现象，这一现象体现为对于任意材料而言，单位体积内所铭刻的神秘术总是有限的。</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">神秘术强化</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">神秘术造物强化是一种基于神秘术和炼金术的人造器官移植手术的统称。此类手术旨在将结合了神秘术的炼金造物（大部分是无意识的）与人体融合，将被移植者自身塑造为一个神秘术施术媒介，使被移植者抛开自身的天赋因素，长期便捷的使用某些术式而无需额外练习。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">神秘术造物强化遵循“三不”原则：不可逆，指神秘术强化一经安装，那么在他失效前便都无法拆除，除非放弃掉承载造物的那部分器官，倘若是整体替换型改造，那么拆除他需要付出的代价会更大，不过安装者死亡后的拆除则不会那么麻烦；不永久，他的本质毕竟是术式刻章，所以强化并不能永久起效，随着时间流逝，造物上附着的术式会渐渐失效；不繁衍，造物强化所释放的神秘术并不能作为术式铭刻过程中的A。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">神秘术造物强化起效的本质是将您变为一副比较高级的术式刻章，这意味着它也也会出现饱和现象。每种神秘术造物强化都会占用一定的铭刻空位，而众所周知，术式刻章的铭刻空位越接近零——在这里，空位的总量不仅由材料本身决定，还和被强化者的种族和身体素质相关——刻章越不稳定。在造物强化中，这一点体现为被强化者生理和心理上的异变，以及神秘术回火。</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">神秘术回火</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">释放神秘术是一件耗费精神的事，一般来说，求生本能会在术士抵达极限前发作令术士暂时失去施术能力。但凡事总有例外，在激素、感情等主观和客观因素的影响下，这种本能有时会被屏蔽，造成神秘术回火。神秘术回火的表现有二，其一是术士无法调整自己的施术功率，只能以最大功率进行施术，控制术士对象也会变得极其艰难甚至无法控制；其二是他的身体和精神会受到严重的伤害，例如异常的血肉增生、肌肉开始自溶解、精神分裂、失忆、脑死亡……</p>
+                              <p class="source-doc-paragraph" data-source-style="Heading 4">巴别塔错误</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">巴别塔错误是一种只发生在安装了义体的神秘术士身上的现象，是赛博精神病和神秘术回火的一种常见诱因，也是神秘术士不能安装义体的直接原因。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">巴别塔错误的根本原因，是唯物的义体和唯心的神秘术之间发生了冲突。我们发现当术士使用神秘术时，他的大脑会无规律的释放神经信号。此举的本质是潜意识在帮助术士稳定施法，可问题是，该信号有概率诡异的绕过义体的滤波器，导致义体被错误的启动。例如在一起案例中，术士本想在告白时召唤玫瑰花瓣营造浪漫气氛，手上的螳螂刀却突然启动捅伤了和正在和他接吻的人。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">但其实义体被错误启动只是巴别塔错误最轻微的后果。众所周知，大脑在发出信号控制肢体或义体后，对方也会向大脑发送回馈信号，形成神经信号回路。在巴别塔错误发生时，大脑没有发出控制信号却收到了回馈信号，神经信号回路无法构成，令大脑陷入一种自相矛盾的自我怀疑。这种自我怀疑轻则损伤脑组织，重则同时引发赛博精神病和神秘术回火。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal">那么神秘术士是否注定无法安装义体呢？答案是否定的。通过一系列特定的动作，术士可以封闭自身的神秘术，换取安装义体而不会遭遇巴别塔错误的机会。而封闭神秘术并不会改变他自己的血脉，他在完全拆除义体后可以“解封”自己的神秘术，但是神秘术强度会严重下降。</p>
+                              <p class="source-doc-paragraph" data-source-style="Normal"></p>
+                              <p class="source-doc-paragraph" data-source-style="Normal"></p>
+                              <p class="source-doc-paragraph" data-source-style="Normal"></p>
+                              <p class="source-doc-paragraph" data-source-style="Normal"></p>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -3243,6 +3506,48 @@
                   <div class="dh-teal-box"><h1>神秘术</h1></div><div class="dh-overlap-lightblue"></div>
               </div>
           </div>
+      </div>
+      <div id="dir-content-magic-legacy" class="dir-specific-content source-docs-content" style="display: none !important;">
+        <section class="source-doc-section" data-source-doc-name="神秘术.docx" data-source-main="true" data-source-incomplete="true">
+          <div class="source-doc-body">
+            <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="神秘术">神秘术</p>
+            <p class="source-doc-paragraph" data-source-doc-index="1" data-source-style="Normal" data-source-text="下面的内容可以帮助你更全面的理解神秘术。当然，如果您不想在上面花时间的话，您只需把神秘术和魔法画等号，然后打开另一个你想阅读的文档。">下面的内容可以帮助你更全面的理解神秘术。当然，如果您不想在上面花时间的话，您只需把神秘术和魔法画等号，然后打开另一个你想阅读的文档。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="2" data-source-style="Heading 4" data-source-text="定义">定义</p>
+            <p class="source-doc-paragraph" data-source-doc-index="3" data-source-style="Normal" data-source-text="神秘术Theurgy，又称魔法、巫术、神通术，是一切由术式进行激发且不完全服从物理规律的特殊能力之总称。神秘术囊括了常人眼中绝大多数的“魔法”，例如火球术、荧光咒、漂浮咒、隔空取物、变形术、瞬间移动等等等……得益于宽泛的定义，神秘术可谓是包罗万象，上到撕裂空间穿越时间，下到凭空变出一点电火花，都算是神秘术。">神秘术Theurgy，又称魔法、巫术、神通术，是一切由术式进行激发且不完全服从物理规律的特殊能力之总称。神秘术囊括了常人眼中绝大多数的“魔法”，例如火球术、荧光咒、漂浮咒、隔空取物、变形术、瞬间移动等等等……得益于宽泛的定义，神秘术可谓是包罗万象，上到撕裂空间穿越时间，下到凭空变出一点电火花，都算是神秘术。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="4" data-source-style="Heading 4" data-source-text="神秘术士和神秘术式">神秘术士和神秘术式</p>
+            <p class="source-doc-paragraph" data-source-doc-index="5" data-source-style="Normal" data-source-text="你可以把神秘术类比成代码，那么神秘术士就是程序员，程序员写出来的程序则是神秘术式。神秘术用的自己的主观意识控制神秘术，编织出神秘术式以特定的方式作用于宏观世界，这个过程叫施术，就像程序员在编程。施术需要承担精神负荷，这个负荷的量通常与神秘术的复杂度和强度呈正相关，一些特定的神秘术还有额外的代价。神秘术通常由强度较高者覆盖较低者，">你可以把神秘术类比成代码，那么神秘术士就是程序员，程序员写出来的程序则是神秘术式。神秘术用的自己的主观意识控制神秘术，编织出神秘术式以特定的方式作用于宏观世界，这个过程叫施术，就像程序员在编程。施术需要承担精神负荷，这个负荷的量通常与神秘术的复杂度和强度呈正相关，一些特定的神秘术还有额外的代价。神秘术通常由强度较高者覆盖较低者，</p>
+            <p class="source-doc-paragraph" data-source-doc-index="6" data-source-style="Normal" data-source-text="有时会产生干涉，可能相互抵消、融合，或引发不可预测的异常现象。">有时会产生干涉，可能相互抵消、融合，或引发不可预测的异常现象。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="7" data-source-style="Normal" data-source-text="神秘术士并非天生就会神秘术，但他们天生就是神秘术士。是的，神秘术士对神秘术的掌握需要后天培养，但成为神秘术的资格和他们能释放的术式却受到基因的掣肘。至于其中的规律，以下是我们已经摸清的：">神秘术士并非天生就会神秘术，但他们天生就是神秘术士。是的，神秘术士对神秘术的掌握需要后天培养，但成为神秘术的资格和他们能释放的术式却受到基因的掣肘。至于其中的规律，以下是我们已经摸清的：</p>
+            <p class="source-doc-paragraph" data-source-doc-index="8" data-source-style="Normal" data-source-text="1神秘术士的直系后代大概率是神秘术士，非神秘术士的直系后代也可能是神秘术士">1神秘术士的直系后代大概率是神秘术士，非神秘术士的直系后代也可能是神秘术士</p>
+            <p class="source-doc-paragraph" data-source-doc-index="9" data-source-style="Normal" data-source-text="2一个术士所掌握的神秘术总由一个“主干”和若干个数量有限的“分支”决定，分支总是和主干有明显关联的">2一个术士所掌握的神秘术总由一个“主干”和若干个数量有限的“分支”决定，分支总是和主干有明显关联的</p>
+            <p class="source-doc-paragraph" data-source-doc-index="10" data-source-style="Normal" data-source-text="3主干总是不变的，但分支在经历剧烈的情感冲击或在某些外因的作用下会发生变化">3主干总是不变的，但分支在经历剧烈的情感冲击或在某些外因的作用下会发生变化</p>
+            <p class="source-doc-paragraph" data-source-doc-index="11" data-source-style="Heading 4" data-source-text="术式结构/结构型神秘术">术式结构/结构型神秘术</p>
+            <p class="source-doc-paragraph" data-source-doc-index="12" data-source-style="Normal" data-source-text="首先，小标题中的两个词实际上所指的是同一物。">首先，小标题中的两个词实际上所指的是同一物。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="13" data-source-style="Normal" data-source-text="结构型神秘术是一种很特殊的神秘术，它并不由神秘术士释放，而是由某个特定的复杂结构进行施术，尽管有时这些结构的组成包含神秘术士。最有名的结构型神秘术莫过于炼金术，一种涉及到物质转化的神秘术。">结构型神秘术是一种很特殊的神秘术，它并不由神秘术士释放，而是由某个特定的复杂结构进行施术，尽管有时这些结构的组成包含神秘术士。最有名的结构型神秘术莫过于炼金术，一种涉及到物质转化的神秘术。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="14" data-source-style="Heading 4" data-source-text="术式铭刻和术式刻章">术式铭刻和术式刻章</p>
+            <p class="source-doc-paragraph" data-source-doc-index="15" data-source-style="Normal" data-source-text="这世界上的神秘术士很少，但想用神秘术的人很多。所以，我们发明了术式刻章。">这世界上的神秘术士很少，但想用神秘术的人很多。所以，我们发明了术式刻章。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="16" data-source-style="Normal" data-source-text="术式刻章类似一个只能安装一个APP的手机，那唯一的APP就是铭刻在它身上的神秘术式。通过注入能量将其激发，它便会按照既定的程序释放指定的术式，在这个过程里，你的主观意识不会对它造成任何影响——好处是不用担心你自己的状态影响术式效果，缺点是无法依照你的想法对术式效果进行调整，同时也抛弃了唯心爆发的可能。">术式刻章类似一个只能安装一个APP的手机，那唯一的APP就是铭刻在它身上的神秘术式。通过注入能量将其激发，它便会按照既定的程序释放指定的术式，在这个过程里，你的主观意识不会对它造成任何影响——好处是不用担心你自己的状态影响术式效果，缺点是无法依照你的想法对术式效果进行调整，同时也抛弃了唯心爆发的可能。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="17" data-source-style="Normal" data-source-text="制作一个术式刻章至少包含三个术式：用来实现其功能的术式A、将A记录在刻章上的神秘术式B（又称铭记术式）、接受能量并激发A的神秘术式C（又称激活术式），其中，释放B和C的步骤就被称作术式铭刻。">制作一个术式刻章至少包含三个术式：用来实现其功能的术式A、将A记录在刻章上的神秘术式B（又称铭记术式）、接受能量并激发A的神秘术式C（又称激活术式），其中，释放B和C的步骤就被称作术式铭刻。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="18" data-source-style="Normal" data-source-text="术式铭刻是一种非常难以掌握的技能。首先，铭记术式并不是固定的，不同的A需要不同的B，同样的A在威力不同时也需要对B进行调整，而因为A和B必须同时由同一人释放，但神秘术又会受到主观意识的影响，所以，经常出现“专注的调整B，结果因为注意力全在B上导致A变了”的尬尴情况。">术式铭刻是一种非常难以掌握的技能。首先，铭记术式并不是固定的，不同的A需要不同的B，同样的A在威力不同时也需要对B进行调整，而因为A和B必须同时由同一人释放，但神秘术又会受到主观意识的影响，所以，经常出现“专注的调整B，结果因为注意力全在B上导致A变了”的尬尴情况。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="19" data-source-style="Normal" data-source-text="因为上述的原因，术式铭刻在过去的很多年里都是神秘术大师的专属技能，术式刻章也是一种及其罕见且昂贵的物品。即便我们后来找到了铭记术式对应的术式结构，但神秘术式无法被记录的问题依然阻碍着刻章的量产化。直到有一天，有人搭建出了一种全新的术式结构——影印术式。影印术式可以“记录”并“回放”其他术式，让术式刻章终于有了量产化的希望。现如今，虽然依旧需要不断尝试对应的铭刻术式结构，但只要找出那个结构，这种术式刻章就可以源源不断的量产。">因为上述的原因，术式铭刻在过去的很多年里都是神秘术大师的专属技能，术式刻章也是一种及其罕见且昂贵的物品。即便我们后来找到了铭记术式对应的术式结构，但神秘术式无法被记录的问题依然阻碍着刻章的量产化。直到有一天，有人搭建出了一种全新的术式结构——影印术式。影印术式可以“记录”并“回放”其他术式，让术式刻章终于有了量产化的希望。现如今，虽然依旧需要不断尝试对应的铭刻术式结构，但只要找出那个结构，这种术式刻章就可以源源不断的量产。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="20" data-source-style="Normal" data-source-text="术式刻章固然好，但是依旧存在缺陷。首当其冲的便是刻章大多存在“保质期”。刻章在被制造出来一段时间后就会无效，而且随着激发次数的增加，他释放术式的威力也会渐渐下降，部分甚至是一次性产品。我们还必须注意到的是术式刻章的饱和现象，这一现象体现为对于任意材料而言，单位体积内所铭刻的神秘术总是有限的。">术式刻章固然好，但是依旧存在缺陷。首当其冲的便是刻章大多存在“保质期”。刻章在被制造出来一段时间后就会无效，而且随着激发次数的增加，他释放术式的威力也会渐渐下降，部分甚至是一次性产品。我们还必须注意到的是术式刻章的饱和现象，这一现象体现为对于任意材料而言，单位体积内所铭刻的神秘术总是有限的。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="21" data-source-style="Heading 4" data-source-text="神秘术强化">神秘术强化</p>
+            <p class="source-doc-paragraph" data-source-doc-index="22" data-source-style="Normal" data-source-text="神秘术造物强化是一种基于神秘术和炼金术的人造器官移植手术的统称。此类手术旨在将结合了神秘术的炼金造物（大部分是无意识的）与人体融合，将被移植者自身塑造为一个神秘术施术媒介，使被移植者抛开自身的天赋因素，长期便捷的使用某些术式而无需额外练习。">神秘术造物强化是一种基于神秘术和炼金术的人造器官移植手术的统称。此类手术旨在将结合了神秘术的炼金造物（大部分是无意识的）与人体融合，将被移植者自身塑造为一个神秘术施术媒介，使被移植者抛开自身的天赋因素，长期便捷的使用某些术式而无需额外练习。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="23" data-source-style="Normal" data-source-text="神秘术造物强化遵循“三不”原则：不可逆，指神秘术强化一经安装，那么在他失效前便都无法拆除，除非放弃掉承载造物的那部分器官，倘若是整体替换型改造，那么拆除他需要付出的代价会更大，不过安装者死亡后的拆除则不会那么麻烦；不永久，他的本质毕竟是术式刻章，所以强化并不能永久起效，随着时间流逝，造物上附着的术式会渐渐失效；不繁衍，造物强化所释放的神秘术并不能作为术式铭刻过程中的A。">神秘术造物强化遵循“三不”原则：不可逆，指神秘术强化一经安装，那么在他失效前便都无法拆除，除非放弃掉承载造物的那部分器官，倘若是整体替换型改造，那么拆除他需要付出的代价会更大，不过安装者死亡后的拆除则不会那么麻烦；不永久，他的本质毕竟是术式刻章，所以强化并不能永久起效，随着时间流逝，造物上附着的术式会渐渐失效；不繁衍，造物强化所释放的神秘术并不能作为术式铭刻过程中的A。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="24" data-source-style="Normal" data-source-text="神秘术造物强化起效的本质是将您变为一副比较高级的术式刻章，这意味着它也也会出现饱和现象。每种神秘术造物强化都会占用一定的铭刻空位，而众所周知，术式刻章的铭刻空位越接近零——在这里，空位的总量不仅由材料本身决定，还和被强化者的种族和身体素质相关——刻章越不稳定。在造物强化中，这一点体现为被强化者生理和心理上的异变，以及神秘术回火。">神秘术造物强化起效的本质是将您变为一副比较高级的术式刻章，这意味着它也也会出现饱和现象。每种神秘术造物强化都会占用一定的铭刻空位，而众所周知，术式刻章的铭刻空位越接近零——在这里，空位的总量不仅由材料本身决定，还和被强化者的种族和身体素质相关——刻章越不稳定。在造物强化中，这一点体现为被强化者生理和心理上的异变，以及神秘术回火。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="25" data-source-style="Heading 4" data-source-text="神秘术回火">神秘术回火</p>
+            <p class="source-doc-paragraph" data-source-doc-index="26" data-source-style="Normal" data-source-text="释放神秘术是一件耗费精神的事，一般来说，求生本能会在术士抵达极限前发作令术士暂时失去施术能力。但凡事总有例外，在激素、感情等主观和客观因素的影响下，这种本能有时会被屏蔽，造成神秘术回火。神秘术回火的表现有二，其一是术士无法调整自己的施术功率，只能以最大功率进行施术，控制术士对象也会变得极其艰难甚至无法控制；其二是他的身体和精神会受到严重的伤害，例如异常的血肉增生、肌肉开始自溶解、精神分裂、失忆、脑死亡……">释放神秘术是一件耗费精神的事，一般来说，求生本能会在术士抵达极限前发作令术士暂时失去施术能力。但凡事总有例外，在激素、感情等主观和客观因素的影响下，这种本能有时会被屏蔽，造成神秘术回火。神秘术回火的表现有二，其一是术士无法调整自己的施术功率，只能以最大功率进行施术，控制术士对象也会变得极其艰难甚至无法控制；其二是他的身体和精神会受到严重的伤害，例如异常的血肉增生、肌肉开始自溶解、精神分裂、失忆、脑死亡……</p>
+            <p class="source-doc-paragraph" data-source-doc-index="27" data-source-style="Heading 4" data-source-text="巴别塔错误">巴别塔错误</p>
+            <p class="source-doc-paragraph" data-source-doc-index="28" data-source-style="Normal" data-source-text="巴别塔错误是一种只发生在安装了义体的神秘术士身上的现象，是赛博精神病和神秘术回火的一种常见诱因，也是神秘术士不能安装义体的直接原因。">巴别塔错误是一种只发生在安装了义体的神秘术士身上的现象，是赛博精神病和神秘术回火的一种常见诱因，也是神秘术士不能安装义体的直接原因。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="29" data-source-style="Normal" data-source-text="巴别塔错误的根本原因，是唯物的义体和唯心的神秘术之间发生了冲突。我们发现当术士使用神秘术时，他的大脑会无规律的释放神经信号。此举的本质是潜意识在帮助术士稳定施法，可问题是，该信号有概率诡异的绕过义体的滤波器，导致义体被错误的启动。例如在一起案例中，术士本想在告白时召唤玫瑰花瓣营造浪漫气氛，手上的螳螂刀却突然启动捅伤了和正在和他接吻的人。">巴别塔错误的根本原因，是唯物的义体和唯心的神秘术之间发生了冲突。我们发现当术士使用神秘术时，他的大脑会无规律的释放神经信号。此举的本质是潜意识在帮助术士稳定施法，可问题是，该信号有概率诡异的绕过义体的滤波器，导致义体被错误的启动。例如在一起案例中，术士本想在告白时召唤玫瑰花瓣营造浪漫气氛，手上的螳螂刀却突然启动捅伤了和正在和他接吻的人。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="30" data-source-style="Normal" data-source-text="但其实义体被错误启动只是巴别塔错误最轻微的后果。众所周知，大脑在发出信号控制肢体或义体后，对方也会向大脑发送回馈信号，形成神经信号回路。在巴别塔错误发生时，大脑没有发出控制信号却收到了回馈信号，神经信号回路无法构成，令大脑陷入一种自相矛盾的自我怀疑。这种自我怀疑轻则损伤脑组织，重则同时引发赛博精神病和神秘术回火。">但其实义体被错误启动只是巴别塔错误最轻微的后果。众所周知，大脑在发出信号控制肢体或义体后，对方也会向大脑发送回馈信号，形成神经信号回路。在巴别塔错误发生时，大脑没有发出控制信号却收到了回馈信号，神经信号回路无法构成，令大脑陷入一种自相矛盾的自我怀疑。这种自我怀疑轻则损伤脑组织，重则同时引发赛博精神病和神秘术回火。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="31" data-source-style="Normal" data-source-text="那么神秘术士是否注定无法安装义体呢？答案是否定的。通过一系列特定的动作，术士可以封闭自身的神秘术，换取安装义体而不会遭遇巴别塔错误的机会。而封闭神秘术并不会改变他自己的血脉，他在完全拆除义体后可以“解封”自己的神秘术，但是神秘术强度会严重下降。">那么神秘术士是否注定无法安装义体呢？答案是否定的。通过一系列特定的动作，术士可以封闭自身的神秘术，换取安装义体而不会遭遇巴别塔错误的机会。而封闭神秘术并不会改变他自己的血脉，他在完全拆除义体后可以“解封”自己的神秘术，但是神秘术强度会严重下降。</p>
+            <p class="source-doc-paragraph" data-source-doc-index="32" data-source-style="Normal" data-source-text=""></p>
+            <p class="source-doc-paragraph" data-source-doc-index="33" data-source-style="Normal" data-source-text=""></p>
+            <p class="source-doc-paragraph" data-source-doc-index="34" data-source-style="Normal" data-source-text=""></p>
+            <p class="source-doc-paragraph" data-source-doc-index="35" data-source-style="Normal" data-source-text=""></p>
+          </div>
+        </section>
       </div>
 
       <div id="dir-content-chronicle" class="dir-specific-content dh-layout-wrapper" style="display: none;">
@@ -10012,6 +10317,66 @@
         homeView.style.display = 'block';
       });
     });
+
+    function getCompleteSourceSection(fileName) {
+      return Array.from(document.querySelectorAll('section[data-source-doc-name]'))
+        .find(section => section.getAttribute('data-source-doc-name') === fileName && section.getAttribute('data-source-incomplete') !== 'true');
+    }
+
+    function buildEmbeddedDocuments(fileNames) {
+      const fragment = document.createDocumentFragment();
+      fileNames.forEach(fileName => {
+        const sourceSection = getCompleteSourceSection(fileName);
+        if (!sourceSection) return;
+
+        const article = document.createElement('div');
+        article.className = 'embedded-docx-text';
+
+        const sourceTitle = sourceSection.querySelector('.source-doc-title');
+        const sourceBody = sourceSection.querySelector('.source-doc-body');
+        if (sourceTitle) article.appendChild(sourceTitle.cloneNode(true));
+        if (sourceBody) article.appendChild(sourceBody.cloneNode(true));
+        fragment.appendChild(article);
+      });
+      return fragment;
+    }
+
+    function replaceDocumentText(containerId, selector, fileNames, preserveControls) {
+      const container = document.getElementById(containerId);
+      const textBox = container ? container.querySelector(selector) : null;
+      if (!textBox) return;
+
+      const controls = preserveControls
+        ? Array.from(textBox.querySelectorAll('.nav-trigger')).map(control => control.cloneNode(true))
+        : [];
+
+      textBox.innerHTML = '';
+      textBox.appendChild(buildEmbeddedDocuments(fileNames));
+      controls.forEach(control => textBox.appendChild(control));
+    }
+
+    function appendDocumentText(containerId, fileNames) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const host = document.createElement('div');
+      host.className = 'dir-content-wrapper embedded-docx-host';
+      host.appendChild(buildEmbeddedDocuments(fileNames));
+      container.appendChild(host);
+    }
+
+    replaceDocumentText('dir-content-mengyang', '.dh-mid-text', ['梦羊城Imagine Sheep City.docx'], false);
+    replaceDocumentText('dir-content-race', '.dh-mid-text', ['种族.docx'], false);
+    replaceDocumentText('dir-content-chronicle', '.dh-mid-text', ['总编年史第二部分.docx', '总编年史.docx'], false);
+    replaceDocumentText('dir-content-alchemy', '.dh-mid-text', ['猩猩也能看懂的炼金术原理.docx', '炼金术杂项.docx'], true);
+    replaceDocumentText('dir-content-god', '.dh-mid-text', ['神.docx'], false);
+    replaceDocumentText('dir-content-corruption-files', '.editable-content', ['腐蚀记录档案.docx'], false);
+    replaceDocumentText('dir-content-alchemy-misc', '.editable-content', ['炼金术杂项.docx'], false);
+
+    appendDocumentText('dir-content-company', ['公司.docx']);
+    appendDocumentText('dir-content-official-org', ['官方组织.docx', '政权（括号里是简称）.docx']);
+    appendDocumentText('dir-content-civilian-org', ['民间组织.docx']);
+    appendDocumentText('dir-content-corruption', ['现实腐蚀.docx']);
 
     const otherTriggers = document.querySelectorAll('.nav-trigger');
     otherTriggers.forEach(trigger => {
