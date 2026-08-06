@@ -10334,7 +10334,11 @@
 
         const sourceTitle = sourceSection.querySelector('.source-doc-title');
         const sourceBody = sourceSection.querySelector('.source-doc-body');
-        if (sourceTitle) article.appendChild(sourceTitle.cloneNode(true));
+        if (sourceTitle) {
+          const cleanTitle = sourceTitle.cloneNode(true);
+          cleanTitle.textContent = cleanTitle.textContent.replace(/\.docx$/i, '');
+          article.appendChild(cleanTitle);
+        }
         if (sourceBody) article.appendChild(sourceBody.cloneNode(true));
         fragment.appendChild(article);
       });
