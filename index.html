@@ -578,50 +578,64 @@
   .dir-main-title {
     height: 12.5vh;
     line-height: 12.5vh;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
     color: #fff;
     white-space: nowrap;
     margin-bottom: 2vh;
     text-shadow: 0 0 15px rgba(255,140,0,0.5);
+    letter-spacing: 2px;
   }
 
   .dir-catalog-box {
     display: inline-block;
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 900;
     color: #FF8C00;
-    padding: 10px 30px;
-    border: 2px solid #FF8C00;
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.6), inset 0 0 10px rgba(255, 140, 0, 0.2);
-    margin-bottom: 5vh;
+    padding: 8px 25px;
+    border: 1px solid rgba(255,140,0,0.4);
+    box-shadow: 0 0 10px rgba(255, 140, 0, 0.3), inset 0 0 8px rgba(255, 140, 0, 0.1);
+    margin-bottom: 4vh;
+    letter-spacing: 2px;
   }
 
   .dir-content-wrapper {
-    margin-bottom: 5vh;
+    margin-bottom: 4vh;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid rgba(255,140,0,0.08);
+  }
+
+  .dir-content-wrapper:last-child {
+    border-bottom: none;
   }
 
   .dir-sub-title {
-    font-size: 1.8rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 900;
     color: #FF8C00;
     text-shadow: 0 0 8px rgba(255,140,0,0.3);
+    letter-spacing: 1px;
   }
 
   .dir-divider {
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #FF8C00, #00f3ff, transparent);
-    margin: 15px 0;
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
+    height: 1px;
+    background: linear-gradient(90deg, #FF8C00, rgba(255,140,0,0.1));
+    margin: 1.5vh 0 2vh;
+    box-shadow: 0 0 6px rgba(255, 140, 0, 0.3);
   }
 
   .dir-body-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #00f3ff;
-    font-weight: bold;
-    text-shadow: 0 0 6px rgba(0,243,255,0.3);
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #d0d0d0;
+    font-weight: normal;
+    letter-spacing: 0.3px;
+  }
+
+  .dir-body-text strong {
+    color: #FF8C00;
+    font-weight: 700;
   }
 
   #loading-overlay {
@@ -775,9 +789,9 @@
   .dh-mid-text {
       flex: 1;
       overflow-y: auto;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #e0e0e0;
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #d0d0d0;
       padding-right: 0.5vw;
   }
 
@@ -788,20 +802,24 @@
   .dh-mid-text h2 {
       font-size: 1.6rem;
       color: #FF8C00;
-      margin-bottom: 1.5vh;
+      margin-bottom: 2vh;
       font-weight: 900;
       letter-spacing: 2px;
-      border-bottom: 2px solid #FF8C00;
-      padding-bottom: 0.8vh;
+      border-bottom: 2px solid rgba(255, 140, 0, 0.3);
+      padding-bottom: 1vh;
       display: inline-block;
       text-shadow: 0 0 10px rgba(255,140,0,0.4);
   }
 
   .dh-mid-text p {
-      margin-bottom: 1.5vh;
+      margin-bottom: 1.8vh;
       text-indent: 2em;
-      color: #d0d0d0;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+      color: #c8c8c8;
+  }
+
+  .dh-mid-text strong {
+      color: #FF8C00;
+      font-weight: 700;
   }
 
   .dh-mid-split {
@@ -984,37 +1002,56 @@
 
   .inner-link-btn {
     display: inline-block;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #FF8C00;
+    font-size: 0.9rem;
+    font-weight: 900;
+    font-family: 'Orbitron', 'Microsoft YaHei', sans-serif;
+    color: #00f3ff;
     text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid #FF8C00;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 20px;
+    border: 1px solid rgba(0,243,255,0.4);
+    background: rgba(0, 243, 255, 0.05);
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+    box-shadow: 0 0 8px rgba(0,243,255,0.15);
     cursor: pointer;
+    letter-spacing: 2px;
+    clip-path: polygon(3% 0, 100% 0, 97% 100%, 0% 100%);
   }
 
   .inner-link-btn:hover {
-    background: #FF8C00;
-    color: #000;
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.8);
+    background: rgba(0, 243, 255, 0.15);
+    color: #00f3ff;
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+    border-color: #00f3ff;
   }
 
   .editable-content {
     width: 100%;
     min-height: 40vh;
     background: rgba(20, 20, 20, 0.6);
-    border: 1px dashed #FF8C00;
-    padding: 20px;
-    font-size: 1.2rem;
+    border: 1px solid rgba(255, 140, 0, 0.2);
+    border-left: 3px solid rgba(255, 140, 0, 0.4);
+    padding: 2.5vh 2vw;
+    font-size: 0.95rem;
     color: #d0d0d0;
-    line-height: 1.8;
+    line-height: 2;
     outline: none;
     transition: all 0.3s ease;
     border-radius: 0;
     clip-path: polygon(0 0, 100% 0, 97% 100%, 0% 100%);
+  }
+
+  .editable-content p {
+    margin-bottom: 1.5vh;
+    text-indent: 2em;
+  }
+
+  .editable-content strong {
+    color: #FF8C00;
+    font-weight: 700;
+  }
+
+  .editable-content p strong {
+    display: inline;
   }
 
   #home-view {
@@ -2704,206 +2741,102 @@
         <div id="dir-content-company" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-1">公司小标题1</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-1" data-title="公司小标题1" data-sync-target="company-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="company-sub-1">橘核堆芯 Orange Cores</div>
+              <a class="nav-trigger inner-link-btn" data-dir="company-inner-1" data-title="橘核堆芯" data-sync-target="company-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入1。</div>
+            <div class="dir-body-text">橘核堆芯的起源可以追溯到17世纪末的秘密组织"CK党"。如今的橘核堆芯已经是世界范围内的超级企业，业务涉及军工、半导体、计算机硬件和人工智能开发等多个领域，总部位于美国加利福尼亚州洛杉矶市。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-2">公司小标题2</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-2" data-title="公司小标题2" data-sync-target="company-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="company-sub-2">安全国际 Security International</div>
+              <a class="nav-trigger inner-link-btn" data-dir="company-inner-2" data-title="安全国际" data-sync-target="company-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入2。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-3">公司小标题3</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-3" data-title="公司小标题3" data-sync-target="company-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入3。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-4">公司小标题4</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-4" data-title="公司小标题4" data-sync-target="company-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入4。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-5">公司小标题5</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-5" data-title="公司小标题5" data-sync-target="company-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入5。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-6">公司小标题6</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-6" data-title="公司小标题6" data-sync-target="company-sub-6" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入6。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-7">公司小标题7</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-7" data-title="公司小标题7" data-sync-target="company-sub-7" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于公司的正文待输入7。</div>
+            <div class="dir-body-text">安全国际诞生于延续战争后的全球重建期，由危创小队与信诺物流合并而成，主要服务中产及以上群体的高端增值服务，同时为企业、政府机构提供定制化解决方案。总部位于新美国梦羊城。</div>
           </div>
         </div>
 
         <div id="dir-content-official-org" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-1">官方组织小标题1</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-1" data-title="官方组织小标题1" data-sync-target="official-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="official-sub-1">现实腐蚀遏制组织 R.C.C.O.</div>
+              <a class="nav-trigger inner-link-btn" data-dir="official-inner-1" data-title="RCCO" data-sync-target="official-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入1。</div>
+            <div class="dir-body-text">RCCO是根据RCCA建立的全球性组织，负责一切和现实腐蚀有关的事务。素来以"不讲道理"的强硬态度闻名，享有非常高的执法权，甚至不需要法院或检察院的任何批准就可以实施搜查和逮捕。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-2">官方组织小标题2</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-2" data-title="官方组织小标题2" data-sync-target="official-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="official-sub-2">梦羊城市政府</div>
+              <a class="nav-trigger inner-link-btn" data-dir="official-inner-2" data-title="市政府" data-sync-target="official-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入2。</div>
+            <div class="dir-body-text">梦羊城是一座资本主义制度下的自由民主城市，市民通过不记名的方式民主选出市长和101名市议会议员。市长是城市的最高统治代表，负责监督并指挥城市各部门运作。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-3">官方组织小标题3</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-3" data-title="官方组织小标题3" data-sync-target="official-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="official-sub-3">神炼局 B.A.T</div>
+              <a class="nav-trigger inner-link-btn" data-dir="official-inner-3" data-title="神炼局" data-sync-target="official-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入3。</div>
+            <div class="dir-body-text">梦羊城神秘术和炼金术管理局，简称"神炼局"。是《神秘术、神秘术士和神秘术制品、炼金术和炼金术造物管理法》的主要执法单位，负责对制品进行评级、收缴，对违法团体及个人进行抓捕。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-4">官方组织小标题4</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-4" data-title="官方组织小标题4" data-sync-target="official-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="official-sub-4">梦羊城警察局 I.S.P.D.</div>
+              <a class="nav-trigger inner-link-btn" data-dir="official-inner-4" data-title="ISPD" data-sync-target="official-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入4。</div>
+            <div class="dir-body-text">由5万多人组成的执法机构负责梦羊城的治安，从忘带钥匙到杀人放火都得管。腐败司空见惯，暗杀和袭击屡见不鲜，ISPD就这样如履薄冰的度过每一天。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-5">官方组织小标题5</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-5" data-title="官方组织小标题5" data-sync-target="official-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="official-sub-5">应急管理局 I.S.E.M.A.</div>
+              <a class="nav-trigger inner-link-btn" data-dir="official-inner-5" data-title="ISEMA" data-sync-target="official-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入5。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-6">官方组织小标题6</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-6" data-title="官方组织小标题6" data-sync-target="official-sub-6" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入6。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="official-sub-7">官方组织小标题7</div>
-              <a class="nav-trigger inner-link-btn" data-dir="official-inner-7" data-title="官方组织小标题7" data-sync-target="official-sub-7" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于官方组织的正文待输入7。</div>
+            <div class="dir-body-text">火灾、心梗、溺水……当你需要急救但又不是安全国际会员的时候，ISEMA将会是你最后的希望。他们的使命是在灾难发生之前、期间和之后为人们提供帮助。</div>
           </div>
         </div>
 
         <div id="dir-content-civilian-org" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-1">民间组织小标题1</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-1" data-title="民间组织小标题1" data-sync-target="civilian-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="civilian-sub-1">温迪戈帮</div>
+              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-1" data-title="温迪戈帮" data-sync-target="civilian-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入1。</div>
+            <div class="dir-body-text">1969~1971年间，"温迪戈"一案经媒体大肆报道后迅速超越了单一凶犯的名称，成为"反抗不公体制的系统性剥削"的代表。该帮派以割下敌人头皮为实力证明，拥有浓重的丧葬文化。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-2">民间组织小标题2</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-2" data-title="民间组织小标题2" data-sync-target="civilian-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="civilian-sub-2">沧溟会</div>
+              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-2" data-title="沧溟会" data-sync-target="civilian-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入2。</div>
+            <div class="dir-body-text">二十世纪二十年代起源于西雅图的华裔帮派，通过赌博、高利贷、"月钱"等灰色产业进行资金回笼。帮派推崇义文化，成员之间以兄弟相称。</div>
           </div>
           <div class="dir-content-wrapper">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-3">民间组织小标题3</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-3" data-title="民间组织小标题3" data-sync-target="civilian-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
+              <div class="dir-sub-title" data-sync-id="civilian-sub-3">黑手党</div>
+              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-3" data-title="黑手党" data-sync-target="civilian-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
             </div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入3。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-4">民间组织小标题4</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-4" data-title="民间组织小标题4" data-sync-target="civilian-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入4。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-5">民间组织小标题5</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-5" data-title="民间组织小标题5" data-sync-target="civilian-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入5。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-6">民间组织小标题6</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-6" data-title="民间组织小标题6" data-sync-target="civilian-sub-6" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入6。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-7">民间组织小标题7</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-7" data-title="民间组织小标题7" data-sync-target="civilian-sub-7" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入7。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-8">民间组织小标题8</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-8" data-title="民间组织小标题8" data-sync-target="civilian-sub-8" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入8。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-9">民间组织小标题9</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-9" data-title="民间组织小标题9" data-sync-target="civilian-sub-9" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于民间组织的正文待输入9。</div>
+            <div class="dir-body-text">来自西西里岛的意大利裔族，更喜欢利用人脉和金钱兵不血刃。积极投资金融、房地产、新能源等合法产业，同时用毒品、赌场、妓院控制地下世界。</div>
           </div>
         </div>
 
         <div id="dir-content-corruption" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
-            <div class="dir-sub-title">小标题1</div>
+            <div class="dir-sub-title">现实腐蚀</div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于现实腐蚀的正文待输入1。</div>
+            <div class="dir-body-text">一种会将现实向不宜居扭曲的频率，其原理至今尚未解明。表现多为超极端气象、地质灾害和超自然现象极度频发。伴随腐蚀一起出现的怪物被称为现实腐蚀体，正常生物在腐蚀作用下发生扭曲而诞生的怪物被称为现实扭曲体。</div>
           </div>
           <div class="dir-content-wrapper">
-            <div class="dir-sub-title">小标题2</div>
+            <div class="dir-sub-title">腐蚀等级划分</div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">这里是关于现实腐蚀的正文待输入2。</div>
+            <div class="dir-body-text">池（10～100km²）＜潭（100～1000km²）＜湖/河（1000～10000km²）＜海（10000km²以上）。腐蚀体强度：扭曲体＜腐蚀体＜精英扭曲体＜精英腐蚀体＜潭级领主＜湖级领主＜腐蚀之王。</div>
           </div>
           <div class="inner-link-container">
             <a class="nav-trigger inner-link-btn" data-dir="corruption-files">现实腐蚀收容档案</a>
@@ -3040,8 +2973,11 @@
             <div class="dh-col-left"><span>A</span><span>R</span><span>I</span><span>E</span><span>S</span><span>D</span></div>
             <div class="dh-col-mid">
                 <div class="dh-mid-text" style="margin-bottom:2vh;">
-                    <p>这里是关于梦羊城的介绍文字。梦羊城是一座充满奇幻色彩的城市，融合了现代科技与古老神秘术的精髓。</p>
-                    <p>在这座城市中，各种势力交织，玩家将体验到丰富多彩的冒险故事。</p>
+                    <p>梦羊城位于北美洲东海岸，是新美国治下的一个自治城市，拥有大约1000万人口。梦羊城总面积为3140平方千米，海岸线长650千米，属于温带海洋性气候。其下辖8个区，市政厅驻于普罗维登斯区。</p>
+                    <p>关于梦羊城更早的历史，我们可以直接去查询一个叫"罗德岛州"的词条，不是因为梦羊城在罗德岛，而是因为在腐蚀危机之前，这个地方就叫罗德岛和普罗维登斯庄园州。</p>
+                    <p>1971年12月，腐蚀危机爆发。在危机开始的前几个月里，人们还天真的认为仅靠物理手段就可以消灭腐蚀，因此在东海岸保卫战中，联邦军队和国民警卫队毫不吝啬的向大地倾泻着炮火。最后的结局我们也都清楚，东海岸不仅沦陷，大部分区域也被炮火夷为平地。</p>
+                    <p>1980年，延续战争结束，罗德岛州光复。但彼时的联邦政府在长达二十年的战斗后并没有足够的实力支持全国重建，因此他们决定在东海岸实施"公司城"模式，改名为梦羊城的罗德岛就是其中一座"公司城"。紧随其后的是快有20年的黄金时代，梦羊城飞速发展，不仅将废墟变回都市，还坐上了纽约沦陷后空缺的世界金融中心的王位。</p>
+                    <p>一切都非常美好，直到2008年的那场金融危机。简单来说，就是在我们熟知的次贷危机的基础上又叠加了现实腐蚀的突然进攻。梦羊城在进攻里抗住了。CLL虽然千疮百孔，但是这片土地最终没有沦陷。</p>
                 </div>
                 <div>
                     <img src="22c7d0c9b8c84f37ac8f61766c48b7ea.jpg" alt="地图" style="width:100%;height:auto;object-fit:contain;">
@@ -3065,8 +3001,12 @@
               <div class="dh-col-mid">
                   <div class="dh-mid-text">
                       <h2>种族</h2>
-                      <p>梦羊城中生活着多种多样的种族，每个种族都有其独特的文化和能力。</p>
-                      <p>从古老的精灵到强壮的兽人，从神秘的元素使到机巧的机械族，每个种族都在这座城市中找到了自己的位置。</p>
+                      <p><strong>人类</strong>：和其他种族相比，人类并没有什么突出的特长，但他们却拥有掌握世界的志向。所以，他们对于各种领域都展开了孜孜不倦的研究，并且都取得了一定的成果。但也正因为这个志向，人类和其他种族或多或少都曾有过冲突。</p>
+                      <p><strong>精灵</strong>：在传说里，精灵是大自然最完美的孩子：人类眼中最美丽帅气的样貌，远超常人的学习能力，以及比大部分种族都长得多的年龄。精灵将神秘术运用到生活的方方面面，并以此搭建起了和人类不相上下的文明。高傲是精灵性格的重要组成。</p>
+                      <p><strong>矮人</strong>：个子不高，身材壮硕，肌肉发达，毛发旺盛。他们深谙所有材料的性质，热衷于研究器械的构造和用途。他们是最好的工匠，熟练而耐心的运用精湛的锻造技术，将神秘术融合进产品之中。矮人非常崇尚烈酒，按他们的说法，只有怂货才会把度数在20°以下的液体称作酒。</p>
+                      <p><strong>兽人</strong>：兽人是一类兼具了人类的直立形态与完整野兽特征的生物。兽人最显著的特征便是极高的身体素质与对环境各方面的适应，其体表通常附着有浓密的皮毛。在很长的一段时间内，兽人都以部落联盟的形式隐藏在那些人类尚未探明的深山中。</p>
+                      <p><strong>亚人</strong>：由人类和兽人进行结合之后的产物，身体结构以人类为主体，但拥有部分兽类特征，如尾巴、兽耳、不同的虹膜等。</p>
+                      <p><strong>血族</strong>：血族起源尚不可知，自中世纪以来便一直活跃在公众视野中。血族细胞的增值速度很快且端粒普遍偏长，天生拥有自愈的能力。但一旦缺少氨基酸，血族将出现极其严重的内脏衰竭。</p>
                   </div>
               </div>
               <div class="dh-col-right">
@@ -3089,8 +3029,9 @@
                       <div class="dh-mid-image"><img src="d3b9cc099a3efee31218c5b8aa48a554.jpg" alt="神秘术"></div>
                       <div class="dh-mid-text">
                           <h2>神秘术</h2>
-                          <p>神秘术是梦羊城世界中的核心力量体系，源自古老的传承与现代的创新。</p>
-                          <p>掌握神秘术的施术者能够操控元素、治愈伤痛、甚至窥探命运的走向。</p>
+                          <p>神秘术Theurgy，又称魔法、巫术、神通术，是一切由术式进行激发且不完全服从物理规律的特殊能力之总称。神秘术囊括了常人眼中绝大多数的"魔法"，例如火球术、荧光咒、漂浮咒、隔空取物、变形术、瞬间移动等等。得益于宽泛的定义，神秘术可谓是包罗万象，上到撕裂空间穿越时间，下到凭空变出一点电火花，都算是神秘术。</p>
+                          <p>你可以把神秘术类比成代码，那么神秘术士就是程序员，程序员写出来的程序则是神秘术式。神秘术士用主观意识控制神秘术，编织出神秘术式以特定的方式作用于宏观世界，这个过程叫施术。施术需要承担精神负荷，这个负荷的量通常与神秘术的复杂度和强度呈正相关。</p>
+                          <p>术式刻章类似一个只能安装一个APP的手机，那唯一的APP就是铭刻在它身上的神秘术式。通过注入能量将其激发，它便会按照既定的程序释放指定的术式。制作一个术式刻章至少包含三个术式：用来实现其功能的术式A、将A记录在刻章上的铭记术式B、接受能量并激发A的激活术式C。</p>
                       </div>
                   </div>
               </div>
@@ -3112,8 +3053,13 @@
               <div class="dh-col-mid">
                   <div class="dh-mid-text">
                       <h2>编年史</h2>
-                      <p>编年史记录了梦羊城从创世至今的重大事件和历史变迁。</p>
-                      <p>每一段历史都影响着当今的世界格局，了解过去才能更好地面对未来。</p>
+                      <p>对于1960年代之前的历史，本文没有提及到的可以直接将现实世界代入其中。</p>
+                      <p><strong>距今35000年或更早</strong>：矮人文明在北欧和南美洲出现，精灵文明在西、南欧和北美洲出现。</p>
+                      <p><strong>前4000-前2000年</strong>：北欧矮人开始使用铁器。前3220年，欧洲的精灵成立了奴隶制国家。南美矮人在约前3000年开始研究炼金术。前3178年，一位精灵无意中释放了有文字记录的第一个神秘术——火球术。</p>
+                      <p><strong>1969年</strong>：全球多地天文台观测到一颗与地球轨道相交的矮行星"魔神星"。1971年12月，现实腐蚀爆发，延续战争开始。</p>
+                      <p><strong>1980年</strong>：延续战争结束。RCCO总部大楼在北京竣工。美国签署《公司城法案》。橘核堆芯参与全国电网重建。</p>
+                      <p><strong>1982年</strong>：梦羊城神秘术和炼金术管理局（BAT）正式成立。阿尔卑斯联合大学——欧洲第一所跨种族综合大学成立。</p>
+                      <p><strong>1983年</strong>：安全国际成立。梦羊城警察局成立机动特遣队"B-6"。</p>
                   </div>
               </div>
               <div class="dh-col-right">
@@ -3136,8 +3082,9 @@
                       <div class="dh-mid-image"><img src="585a9a76f1413a2d611f615f8474aebf.jpg" alt="炼金术"></div>
                       <div class="dh-mid-text">
                           <h2>炼金术</h2>
-                          <p>炼金术是一门古老而精密的技艺，融合了化学、哲学与神秘学。</p>
-                          <p>炼金术士能够将普通材料转化为珍贵的药剂和附魔物品，是梦羊城中不可或缺的职业。</p>
+                          <p>在过去的很长一段时间里，炼金术都被视为一种奇迹，一个神奇技艺，而非一门学科，因为那时还没有人能总结出炼金术理论基础。直到神秘元素学的诞生，炼金术才有了真正的理论支撑。</p>
+                          <p>所谓炼金术，就是将各种抽象性质进行组合，最终产生拥有独特性质的神奇物质的技艺。元素在神秘元素学中所指不是具体的事物，而是抽象性质——象征灵动流转的气，象征神秘精神的以太，象征稳定不变的石，象征低谷隐藏的朽，象征成长变化的生，象征终结寂静的死，象征鼎盛繁茂的炎，象征爆发冲击的雷。</p>
+                          <p>纯粹，是炼金术的要义。炼金术的本质就是将元素占比不明确的、性质驳杂的原材料，炼制成元素占比较明确、性质突出可控的物质的过程。等价交换是炼金术不变的原则。</p>
                       </div>
                   </div>
               </div>
@@ -3159,9 +3106,16 @@
       <div id="dir-content-alchemy-misc" class="dir-specific-content" style="display: none;">
         <section class="scroll-section">
           <div class="dir-content-wrapper">
-            <div class="dir-sub-title">杂项内容</div>
+            <div class="dir-sub-title">炼金术杂项</div>
             <div class="dir-divider"></div>
-            <div class="editable-content">内容待编辑</div>
+            <div class="editable-content">
+              <p><strong>现代炼金术研究方向：</strong>所有炼金术师所做的其实也可以简单归纳为一件事情，那就是材料开发。一方面炼金术本就与材料学有密切联系，在如今的尖端材料领域，尤其是超导领域以及宇航领域，炼金术都有凭借神奇材料的优异性质发挥独特的作用。</p>
+              <p><strong>炼金传说：</strong>最著名的就是"图特的亡灵书"，据说那是由古埃及的智慧之神所作的传奇之书，人们相信其中蕴含了炼金术的究极奥秘。其次是"尼古拉的宝藏"——尼古拉通过《亚伯拉罕之书》破解了《翠玉录》，获得了贤者之石的配方。第三个传说则是"莱茵河底的宝库"与"魔戒"。</p>
+              <p><strong>灵魂锻造：</strong>极致的亵渎，禁忌的技艺！这是将他人灵魂作为原料锻造的技巧。灵魂武器真正强大的地方在于其能发挥该灵魂生前的能力。高大威猛的战士与他携带的大剑融合锻造，可以重现他生前的战技。</p>
+              <p><strong>性质集束：</strong>相当古老的技艺，也被称为元素精炼，是通过神秘术来帮助自己将炼金原料提纯的技术。集束无疑是使事物更加齐整统一，而统一的方向无疑是大多数，这就可以确定被转化的对象肯定不是原料中的大量元素，而是微量元素。</p>
+              <p><strong>炼金基础：</strong>一套炼金术师必须掌握的"基本功"合集，包括：原料的处理、元素的判断、投入比例的计算、常见神奇材料的性质背诵，以及最重要的——安全规程。</p>
+              <p><strong>生命金属配方：</strong>元素比=石：生：气：炎：以太=8：7：2：2：1。生命金属是炼金术生命炼成领域的产物，物如其名，是拥有生命性的金属，常被用在义体制造上。</p>
+            </div>
           </div>
         </section>
       </div>
@@ -3174,8 +3128,15 @@
                       <div class="dh-mid-image"><img src="cc5713a866ceb00ff19c1f6c1b0078ea.jpg" alt="神"></div>
                       <div class="dh-mid-text">
                           <h2>神</h2>
-                          <p>神是梦羊城世界中至高无上的存在，每一位神明都掌管着不同的领域。</p>
-                          <p>他们的意志影响着整个世界的运转，信徒们的祈祷与献祭是维系神力的纽带。</p>
+                          <p>神是概念、神秘术和精神三者的集合体，是一种十分强大、难以被观测的智慧存在，也是世界上所有神秘术的发源。我们如今所使用的一切神秘术，都相当于从名为"神明"的海洋中蒸发出后形成的降雨与其汇成的湖泊。</p>
+                          <p>人们经过长久的研究后，认为神由三部分组成：其灵魂的本质"概念"，相当于我们的精神；其力量的本质"神秘术"，相当于产生的能量；其形态的组成"精神"，相当于我们的血肉骨块。</p>
+                          <p><strong>已知权柄：</strong></p>
+                          <p>「物质 Phys」与非生命物质的转化、合成、操纵有关，是应用最为广泛的权柄。</p>
+                          <p>「空间 Spes」与空间有关，可开辟亚空间、制造鬼打墙、瞬移、空间切割等。</p>
+                          <p>「幻象 Ison」与虚假造象有关，可操控光影，实现隐形、易容、蜃景等效果。</p>
+                          <p>「进化 Evol」与生命有关，可实现治疗和自愈、身体强化或削弱、产生异化等效果。</p>
+                          <p>「心灵 Meti」与人类的精神有关，可影响人的情绪、人格甚至记忆。</p>
+                          <p>「毁灭 Delt」与毁坏、消除有关，十分危险，可摧毁消除世间万物。</p>
                       </div>
                   </div>
               </div>
