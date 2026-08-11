@@ -864,6 +864,338 @@
     box-shadow: 0 0 20px rgba(255, 140, 0, 0.1);
   }
 
+  #dir-content-company.company-doc-layout {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding-bottom: 8vh;
+  }
+
+  #dir-content-company .company-doc-intro {
+    max-width: 82ch;
+    margin: 0 auto 2rem;
+    padding: 1.2rem 1.4rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.075), rgba(0, 243, 255, 0.025));
+    border: 1px solid rgba(255, 140, 0, 0.24);
+    box-shadow: inset 0 0 22px rgba(255, 140, 0, 0.035);
+  }
+
+  #dir-content-company .company-doc-intro .source-doc-paragraph {
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+    text-align: center;
+    border: 0;
+  }
+
+  #dir-content-company .company-doc-intro .source-doc-paragraph[data-source-style="Title"] {
+    color: #FF8C00;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+  }
+
+  #dir-content-company .company-index-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0 auto 3rem;
+  }
+
+  #dir-content-company .company-index-card {
+    min-height: 92px;
+    display: grid;
+    grid-template-columns: 3.5rem minmax(0, 1fr) 1.5rem;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1rem 1.15rem;
+    color: #efefef;
+    text-decoration: none;
+    background: linear-gradient(145deg, rgba(255, 140, 0, 0.085), rgba(8, 12, 14, 0.86));
+    border: 1px solid rgba(255, 140, 0, 0.27);
+    box-shadow: inset 0 0 18px rgba(255, 140, 0, 0.025), 0 8px 28px rgba(0, 0, 0, 0.18);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  #dir-content-company .company-index-card:hover,
+  #dir-content-company .company-index-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(0, 243, 255, 0.58);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.08), inset 0 0 18px rgba(255, 140, 0, 0.035);
+    outline: none;
+  }
+
+  #dir-content-company .company-index-number {
+    color: #FF8C00;
+    font-size: 1.45rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 0.06em;
+  }
+
+  #dir-content-company .company-index-name {
+    min-width: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  #dir-content-company .company-index-arrow {
+    color: #00f3ff;
+    font-size: 1.1rem;
+    text-align: right;
+  }
+
+  #dir-content-company .company-doc-list {
+    display: grid;
+    gap: 2.2rem;
+  }
+
+  #dir-content-company .company-doc-article {
+    position: relative;
+    padding: clamp(1.2rem, 2.6vw, 2.25rem);
+    background:
+      linear-gradient(90deg, rgba(255, 140, 0, 0.42), rgba(255, 140, 0, 0)) top left / 38% 1px no-repeat,
+      linear-gradient(270deg, rgba(0, 243, 255, 0.3), rgba(0, 243, 255, 0)) top right / 38% 1px no-repeat,
+      linear-gradient(145deg, rgba(255, 140, 0, 0.045), rgba(0, 243, 255, 0.018));
+    border: 1px solid rgba(255, 140, 0, 0.15);
+    box-shadow: inset 0 0 25px rgba(255, 140, 0, 0.022), 0 14px 38px rgba(0, 0, 0, 0.16);
+    scroll-margin-top: 2rem;
+  }
+
+  #dir-content-company .company-doc-article::before,
+  #dir-content-company .company-doc-article::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    width: 26px;
+    height: 3px;
+  }
+
+  #dir-content-company .company-doc-article::before {
+    left: -1px;
+    background: #FF8C00;
+  }
+
+  #dir-content-company .company-doc-article::after {
+    right: -1px;
+    background: #00f3ff;
+  }
+
+  #dir-content-company .company-doc-article > .source-doc-paragraph {
+    max-width: 86ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Heading 2"]:first-child {
+    max-width: none;
+    margin: 0 0 1.8rem;
+    padding: 0 0 1rem;
+    color: #FF8C00;
+    font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+    font-weight: 900;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.28);
+  }
+
+  #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Heading 5"],
+  #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Heading 6"] {
+    max-width: 86ch;
+    margin-top: 1.55rem;
+    margin-bottom: 0.55rem;
+    color: #e7b36d;
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: left;
+    text-indent: 0;
+  }
+
+  #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Normal"] {
+    font-size: 0.95rem;
+    line-height: 1.92;
+    text-indent: 2em;
+  }
+
+  #dir-content-company .company-doc-article .source-doc-image {
+    width: auto;
+    max-width: min(100%, 760px);
+    max-height: 68vh;
+    margin: 1.6rem auto;
+    object-fit: contain;
+    border-color: rgba(255, 140, 0, 0.34);
+    box-shadow: 0 0 24px rgba(255, 140, 0, 0.1);
+  }
+
+  #dir-content-civilian-org.civilian-doc-layout {
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    padding-bottom: 8vh;
+  }
+
+  #dir-content-civilian-org .civilian-doc-intro {
+    max-width: 88ch;
+    margin: 0 auto 2rem;
+    padding: 1.25rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.075), rgba(0, 243, 255, 0.025));
+    border: 1px solid rgba(255, 140, 0, 0.24);
+    box-shadow: inset 0 0 22px rgba(255, 140, 0, 0.035);
+  }
+
+  #dir-content-civilian-org .civilian-doc-intro .source-doc-paragraph {
+    margin: 0.2rem 0;
+    padding: 0;
+    min-height: 0;
+    color: #FF8C00;
+    text-align: center;
+    border: 0;
+  }
+
+  #dir-content-civilian-org .civilian-doc-intro .source-doc-paragraph[data-source-style="Title"] {
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: 0.2em;
+  }
+
+  #dir-content-civilian-org .civilian-doc-intro .source-doc-paragraph[data-source-style="Heading 1"] {
+    font-size: 1rem;
+    color: #e7b36d;
+    letter-spacing: 0.14em;
+  }
+
+  #dir-content-civilian-org .civilian-index-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 0 auto 3rem;
+  }
+
+  #dir-content-civilian-org .civilian-index-card {
+    min-height: 96px;
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr) 1.2rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    color: #efefef;
+    text-decoration: none;
+    background: linear-gradient(145deg, rgba(255, 140, 0, 0.085), rgba(8, 12, 14, 0.86));
+    border: 1px solid rgba(255, 140, 0, 0.27);
+    box-shadow: inset 0 0 18px rgba(255, 140, 0, 0.025), 0 8px 28px rgba(0, 0, 0, 0.18);
+    transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  #dir-content-civilian-org .civilian-index-card:hover,
+  #dir-content-civilian-org .civilian-index-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: rgba(0, 243, 255, 0.58);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.08), inset 0 0 18px rgba(255, 140, 0, 0.035);
+    outline: none;
+  }
+
+  #dir-content-civilian-org .civilian-index-number {
+    color: #FF8C00;
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  #dir-content-civilian-org .civilian-index-name {
+    min-width: 0;
+    font-size: 0.98rem;
+    font-weight: 800;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  #dir-content-civilian-org .civilian-index-arrow {
+    color: #00f3ff;
+    text-align: right;
+  }
+
+  #dir-content-civilian-org .civilian-doc-list {
+    display: grid;
+    gap: 2.2rem;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article {
+    position: relative;
+    padding: clamp(1.2rem, 2.6vw, 2.25rem);
+    background:
+      linear-gradient(90deg, rgba(255, 140, 0, 0.42), rgba(255, 140, 0, 0)) top left / 38% 1px no-repeat,
+      linear-gradient(270deg, rgba(0, 243, 255, 0.3), rgba(0, 243, 255, 0)) top right / 38% 1px no-repeat,
+      linear-gradient(145deg, rgba(255, 140, 0, 0.045), rgba(0, 243, 255, 0.018));
+    border: 1px solid rgba(255, 140, 0, 0.15);
+    box-shadow: inset 0 0 25px rgba(255, 140, 0, 0.022), 0 14px 38px rgba(0, 0, 0, 0.16);
+    scroll-margin-top: 2rem;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article::before,
+  #dir-content-civilian-org .civilian-doc-article::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    width: 26px;
+    height: 3px;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article::before {
+    left: -1px;
+    background: #FF8C00;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article::after {
+    right: -1px;
+    background: #00f3ff;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph {
+    max-width: 88ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph:first-child {
+    max-width: none;
+    margin: 0 0 1.8rem;
+    padding: 0 0 1rem;
+    color: #FF8C00;
+    font-size: clamp(1.22rem, 2vw, 1.55rem);
+    font-weight: 900;
+    line-height: 1.4;
+    text-align: center;
+    letter-spacing: 0.04em;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.28);
+  }
+
+  #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph[data-source-style="Heading 3"] {
+    margin-top: 1.55rem;
+    margin-bottom: 0.55rem;
+    color: #e7b36d;
+    font-size: 1.02rem;
+    font-weight: 800;
+    text-align: left;
+    text-indent: 0;
+  }
+
+  #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph[data-source-style="Normal"] {
+    font-size: 0.95rem;
+    line-height: 1.92;
+    text-indent: 2em;
+  }
+
+  @media (min-width: 769px) and (max-width: 1100px) {
+    #dir-content-civilian-org .civilian-index-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
   @media (max-width: 768px) {
     .embedded-docx-text {
       max-width: none;
@@ -884,6 +1216,52 @@
 
     .source-doc-paragraph {
       margin: 0.58rem 0;
+    }
+
+    #dir-content-company .company-index-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    #dir-content-company .company-index-card {
+      min-height: 76px;
+      grid-template-columns: 2.7rem minmax(0, 1fr) 1.2rem;
+      padding: 0.85rem 0.9rem;
+    }
+
+    #dir-content-company .company-index-number {
+      font-size: 1.15rem;
+    }
+
+    #dir-content-company .company-doc-article {
+      padding: 1rem 0.9rem;
+    }
+
+    #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Normal"] {
+      font-size: 0.88rem;
+      line-height: 1.78;
+    }
+
+    #dir-content-civilian-org .civilian-index-grid {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    #dir-content-civilian-org .civilian-index-card {
+      min-height: 74px;
+      grid-template-columns: 2.5rem minmax(0, 1fr) 1rem;
+      padding: 0.82rem 0.9rem;
+    }
+
+    #dir-content-civilian-org .civilian-doc-article {
+      padding: 1rem 0.9rem;
+    }
+
+    #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph[data-source-style="Normal"] {
+      font-size: 0.88rem;
+      line-height: 1.78;
     }
 
     #dir-content-mengyang .dh-col-mid {
@@ -1792,6 +2170,15 @@
     color: rgba(255, 255, 255, 0.75);
     line-height: 2;
     text-indent: 2em;
+  }
+
+  .dyn-detail-text p {
+    margin: 0 0 1.15em;
+    text-indent: 2em;
+  }
+
+  .dyn-detail-text p:last-child {
+    margin-bottom: 0;
   }
 
   .dyn-card {
@@ -2895,11 +3282,16 @@
 
               <div class="dyn-card fx-reveal">
                 <div class="dyn-card-sweep"></div>
-                <img src="cs.jpg" alt="城市基建" class="dyn-card-img">
-                <div class="dyn-card-title">城市基建更新</div>
-                <div class="dyn-card-text">梦羊城第七区地铁扩建工程已正式竣工，新增三条线路覆盖西部工业区与东部港口地带。</div>
+                <img src="cs.jpg" alt="种族团结纪念碑" class="dyn-card-img">
+                <div class="dyn-card-title">种族团结纪念碑将于元旦节当天落成</div>
+                <div class="dyn-card-text">铭记历史，致敬先烈，岁月无言，丰碑为证。备受瞩目的种族团结纪念碑剪彩仪式定于于12月31日深夜，在市议会大厦前和跨年倒计时一同举行。</div>
                 <div class="dyn-card-bottom"><button class="dyn-card-explore">EXPLORE</button></div>
-                <div class="dyn-card-detail"><div class="dyn-card-detail-inner">日均运力提升40%，预计缓解早晚高峰拥堵率达62%。同步启用的还有新一代智能调度系统，可根据实时客流动态调整发车间隔。新增站点包括河西枢纽、港务中心和科技园区，全程运行时间约28分钟。</div></div>
+                <div class="dyn-card-detail"><div class="dyn-card-detail-inner">
+                  <p>铭记历史，致敬先烈，岁月无言，丰碑为证。备受瞩目的种族团结纪念碑剪彩仪式定于于12月31日深夜，在市议会大厦前和跨年倒计时一同举行。届时，这座承载着厚重历史与深切缅怀的丰碑将正式与公众见面，为梦羊城增添一处重要的精神文化新地标。</p>
+                  <p>纪念碑主体呈长方形构造，高60米、东西宽40米、南北长50米，采用花岗岩材质，象征着梦羊城坚毅的城市性格。纪念碑四个侧面分别刻有人类、精灵、矮人、兽人形象的浮雕，以纪念各种族在建设梦羊城时做出的不可磨灭的贡献，并宣传各种族平等团结友善互助的优秀价值观。此外，纪念碑基座四周还镌刻着2008年腐蚀危机时所有为保护梦羊城而牺牲的公职人员姓名，纪念每一位用生命守护城市的英雄。</p>
+                  <p>纪念碑的筹建工作自启动以来，得到了市政府的高度重视社会各界爱心人士的鼎力支持。梦羊城副市长海伦·S·阿比扎伊德在接受采访时表示：“这座纪念碑不仅是对过往岁月的深情回望，更是对未来奋斗的激励。”</p>
+                  <p>据悉，当天将有大约30名政府要员、公司代表、娱乐明星等重要人士出席仪式，市政府领导将亲自主持仪式。</p>
+                </div></div>
               </div>
 
               <div class="dyn-card fx-reveal" style="transition-delay:0.15s;">
@@ -2922,11 +3314,15 @@
 
               <div class="dyn-card fx-reveal" style="transition-delay:0.45s;">
                 <div class="dyn-card-sweep"></div>
-                <img src="e0bd2f7482fda20f9f823b9ba8f90fac.jpg" alt="文化祭" class="dyn-card-img">
-                <div class="dyn-card-title">文化祭预告</div>
-                <div class="dyn-card-text">一年一度的梦羊城文化祭将于下月十五日在中央广场盛大开幕，今年主题为「虚实交织」。</div>
+                <img src="e0bd2f7482fda20f9f823b9ba8f90fac.jpg" alt="RCCO腐蚀动向发布会" class="dyn-card-img">
+                <div class="dyn-card-title">RCCO召开新闻发布会公开近期腐蚀动向</div>
+                <div class="dyn-card-text">昨天上午，RCCO梦羊城分局召开新闻发布会，介绍近期我市和周边地区的腐蚀活动情况。</div>
                 <div class="dyn-card-bottom"><button class="dyn-card-explore">EXPLORE</button></div>
-                <div class="dyn-card-detail"><div class="dyn-card-detail-inner">融合AR增强现实与传统神秘术表演。超过120个摊位已确认参展，涵盖美食、手工艺、炼金工坊等多个板块。入场免费，欢迎所有市民参与。晚间将有大型灯光秀和音乐表演。</div></div>
+                <div class="dyn-card-detail"><div class="dyn-card-detail-inner">
+                  <p>昨天上午，RCCO梦羊城分局召开新闻发布会，介绍近期我市和周边地区的腐蚀活动情况。</p>
+                  <p>“过去一个月内，我部共消灭腐蚀体和扭曲体1200余只，堵塞腐蚀井17口。”据有关部门发言人，大部分击杀来自CCL外的腐蚀体和扭曲体，市内安全和秩序完全没有受到影响。对于在梦羊城内出现并被堵塞的腐蚀井，发言人表示腐蚀井的出现带有不确定性，腐蚀海边缘地带出现腐蚀井是正常的。发言人表示CCL目前仍在正常运作，潘多拉腐蚀海也仍处于休眠期，发生类似2008年危机的事件的概率很小，广大群众无需感到恐慌。</p>
+                  <p>发布会上还公开了对两名干员（姓名未公开）的调查结果，这两人在去年八月因涉嫌过度执法被要求接受内部调查。相关部门负责人在会上表示有关干员的行为完全合规合法，目前两人已回到工作岗位。</p>
+                </div></div>
               </div>
 
             </div>
@@ -3030,56 +3426,7 @@
             <div class="dir-catalog-box">目录</div>
         </div>
 
-        <div id="dir-content-company" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-1">橘核堆芯 Orange Cores</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-1" data-title="橘核堆芯" data-sync-target="company-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">橘核堆芯的起源可以追溯到17世纪末的秘密组织"CK党"。如今的橘核堆芯已经是世界范围内的超级企业，业务涉及军工、半导体、计算机硬件和人工智能开发等多个领域，总部位于美国加利福尼亚州洛杉矶市。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-2">安全国际 Security International</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-2" data-title="安全国际" data-sync-target="company-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">安全国际诞生于延续战争后的全球重建期，由危创小队与信诺物流合并而成，主要服务中产及以上群体的高端增值服务，同时为企业、政府机构提供定制化解决方案。总部位于新美国梦羊城。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-3">康兰医药 Kanglan Pharmaceuticals</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-3" data-title="康兰医药" data-sync-target="company-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">由秘密医学结社转型而来的跨国医药企业，公开业务涵盖药物、疫苗、医疗器械和生物工程，暗中持续推进身体强化与人体改造研究。总部位于德国柏林。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-4">丛云精密科技 Sekimo Accurate Technology</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-4" data-title="丛云精密科技" data-sync-target="company-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">从日本军工与船舶产业发展而来的综合科技企业，业务覆盖枪械、舰载武器、装甲车辆、军舰、潜艇和神秘术应用装备，在梦羊城设有重要港口与军事资产。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-5">都林缔约集团 Durin Treaty</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-5" data-title="都林缔约集团" data-sync-target="company-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">美国东海岸炼金术士组成的行业行会，通过执照、等级考试、建议价目和会员制度影响炼金术市场。成员规模从最初的60人扩张到数万人，几乎所有炼金工坊都与其存在联系。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="company-sub-6">松目视觉 Pine Vision</div>
-              <a class="nav-trigger inner-link-btn" data-dir="company-inner-6" data-title="松目视觉" data-sync-target="company-sub-6" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">从照相馆成长起来的光学企业，生产相机、镜片、显微镜和天文望远镜，并以眼部健康与神秘术光学产品建立了独特的技术优势。</div>
-          </div>
-        </div>
+        <div id="dir-content-company" class="dir-specific-content" style="display: none;"></div>
 
         <div id="dir-content-official-org" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
@@ -3124,80 +3471,7 @@
           </div>
         </div>
 
-        <div id="dir-content-civilian-org" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-1">温迪戈帮</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-1" data-title="温迪戈帮" data-sync-target="civilian-sub-1" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">1969~1971年间，"温迪戈"一案经媒体大肆报道后迅速超越了单一凶犯的名称，成为"反抗不公体制的系统性剥削"的代表。该帮派以割下敌人头皮为实力证明，拥有浓重的丧葬文化。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-2">沧溟会</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-2" data-title="沧溟会" data-sync-target="civilian-sub-2" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">二十世纪二十年代起源于西雅图的华裔帮派，通过赌博、高利贷、"月钱"等灰色产业进行资金回笼。帮派推崇义文化，成员之间以兄弟相称。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-3">黑手党</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-3" data-title="黑手党" data-sync-target="civilian-sub-3" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">来自西西里岛的意大利裔族，更喜欢利用人脉和金钱兵不血刃。积极投资金融、房地产、新能源等合法产业，同时用毒品、赌场、妓院控制地下世界。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-4">野兽帮</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-4" data-title="野兽帮" data-sync-target="civilian-sub-4" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">由曾经的社区自卫团体堕落而来的暴力帮派，奉行社会达尔文主义，经营地下斗殴、制毒贩毒和高风险保镖业务。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-5">夜巡者</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-5" data-title="夜巡者" data-sync-target="civilian-sub-5" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">由血族建立的梦羊城本地帮派，核心业务包括卖血、器官交易、毒品走私和网络犯罪，擅长在黑暗中积累力量并窃取数据。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-6">朝圣协 Muth'Os</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-6" data-title="朝圣协" data-sync-target="civilian-sub-6" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">神秘研讨朝圣协会，专门研究神明、神与神秘术的关系以及与神交涉的方法，主要成果包括神启、启示录和半神化技术。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-7">德鲁伊教</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-7" data-title="德鲁伊教" data-sync-target="civilian-sub-7" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">信仰自然与万物有灵的神秘术团体，主张与自然和谐共处，反对破坏环境和强行扭转生命规律，在梦羊城经营着受欢迎的小型植物园与动物园。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-8">末日教</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-8" data-title="末日教" data-sync-target="civilian-sub-8" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">起源于魔神星带来的全球恐慌，笃信唯一真神“主”，将历次灾难视为神对世界的清扫，并以恐怖袭击和连环杀人证明忠诚。</div>
-          </div>
-          <div class="dir-content-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <div class="dir-sub-title" data-sync-id="civilian-sub-9">“大家的命都是命” ALM</div>
-              <a class="nav-trigger inner-link-btn" data-dir="civilian-inner-9" data-title="大家的命都是命" data-sync-target="civilian-sub-9" style="font-size: 1rem; padding: 5px 15px;">进入详情</a>
-            </div>
-            <div class="dir-divider"></div>
-            <div class="dir-body-text">呼吁各族群平权平等、同时争取 LGBTQ+ 群体权益的民间组织，内部长期存在和平派与极端派之间的路线分歧。</div>
-          </div>
-        </div>
+        <div id="dir-content-civilian-org" class="dir-specific-content" style="display: none;"></div>
 
         <div id="dir-content-corruption" class="dir-specific-content" style="display: none;">
           <div class="dir-content-wrapper">
@@ -3508,7 +3782,7 @@
           </div>
       </div>
       <div id="dir-content-magic-legacy" class="dir-specific-content source-docs-content" style="display: none !important;">
-        <section class="source-doc-section" data-source-doc-name="神秘术.docx" data-source-main="true" data-source-incomplete="true">
+        <section class="source-doc-section" data-source-doc-name="神秘术" data-source-main="true" data-source-incomplete="true">
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="神秘术">神秘术</p>
             <p class="source-doc-paragraph" data-source-doc-index="1" data-source-style="Normal" data-source-text="下面的内容可以帮助你更全面的理解神秘术。当然，如果您不想在上面花时间的话，您只需把神秘术和魔法画等号，然后打开另一个你想阅读的文档。">下面的内容可以帮助你更全面的理解神秘术。当然，如果您不想在上面花时间的话，您只需把神秘术和魔法画等号，然后打开另一个你想阅读的文档。</p>
@@ -3795,8 +4069,8 @@
           </div>
         </div>
 
-        <section class="source-doc-section" data-source-doc-name="腐蚀记录档案.docx">
-          <h2 class="source-doc-title">腐蚀记录档案.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="腐蚀记录档案">
+          <h2 class="source-doc-title">腐蚀记录档案</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="腐蚀记录档案">腐蚀记录档案
             </p>
@@ -3852,8 +4126,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="现实腐蚀.docx">
-          <h2 class="source-doc-title">现实腐蚀.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="现实腐蚀">
+          <h2 class="source-doc-title">现实腐蚀</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="现实腐蚀">现实腐蚀
             </p>
@@ -3949,8 +4223,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="政权（括号里是简称）.docx">
-          <h2 class="source-doc-title">政权（括号里是简称）.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="政权（括号里是简称）">
+          <h2 class="source-doc-title">政权（括号里是简称）</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="政权（括号里是简称）">政权（括号里是简称）
             </p>
@@ -4034,8 +4308,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="公司.docx" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">公司.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="公司" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">公司</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="公司">公司
             </p>
@@ -4189,8 +4463,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City.docx" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">梦羊城Imagine Sheep City.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">梦羊城Imagine Sheep City</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="梦羊城  Imagine Sheep City">梦羊城  Imagine Sheep City
             </p>
@@ -4305,8 +4579,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="民间组织.docx" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">民间组织.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="民间组织" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">民间组织</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="民间组织">民间组织
             </p>
@@ -4468,8 +4742,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="官方组织.docx">
-          <h2 class="source-doc-title">官方组织.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="官方组织">
+          <h2 class="source-doc-title">官方组织</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="官方组织">官方组织
             </p>
@@ -4685,8 +4959,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="神秘术.docx">
-          <h2 class="source-doc-title">神秘术.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="神秘术">
+          <h2 class="source-doc-title">神秘术</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="神秘术">神秘术
             </p>
@@ -4762,8 +5036,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="猩猩也能看懂的炼金术原理.docx">
-          <h2 class="source-doc-title">猩猩也能看懂的炼金术原理.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="猩猩也能看懂的炼金术原理">
+          <h2 class="source-doc-title">猩猩也能看懂的炼金术原理</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="猩猩也能看懂的炼金术原理">猩猩也能看懂的炼金术原理
             </p>
@@ -4825,8 +5099,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="炼金术杂项.docx">
-          <h2 class="source-doc-title">炼金术杂项.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="炼金术杂项">
+          <h2 class="source-doc-title">炼金术杂项</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="AI 标题" data-source-text="炼金术杂项">炼金术杂项
             </p>
@@ -4920,8 +5194,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="种族.docx">
-          <h2 class="source-doc-title">种族.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="种族">
+          <h2 class="source-doc-title">种族</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="                                                                                                                                                                                                                                                                                                                                                                                         种族">                                                                                                                                                                                                                                                                                                                                                                                         种族
             </p>
@@ -5029,8 +5303,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="神.docx">
-          <h2 class="source-doc-title">神.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="神">
+          <h2 class="source-doc-title">神</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="神">神
             </p>
@@ -5064,8 +5338,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="总编年史第二部分.docx" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">总编年史第二部分.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="总编年史第二部分" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">总编年史第二部分</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Normal" data-source-text="对于1960年代之前的历史，本文没有提及到的可以直接将现实世界代入其中。">对于1960年代之前的历史，本文没有提及到的可以直接将现实世界代入其中。
             </p>
@@ -5349,8 +5623,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="总编年史.docx" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">总编年史.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="总编年史" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">总编年史</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="总编年史">总编年史
             </p>
@@ -5548,8 +5822,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="公司.docx" data-source-complete="true">
-          <h2 class="source-doc-title">公司.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="公司" data-source-complete="true">
+          <h2 class="source-doc-title">公司</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="公司">公司
             </p>
@@ -6025,8 +6299,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City.docx" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">梦羊城Imagine Sheep City.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">梦羊城Imagine Sheep City</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="梦羊城  Imagine Sheep City">梦羊城  Imagine Sheep City
             </p>
@@ -6249,8 +6523,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="总编年史第二部分.docx" data-source-complete="true">
-          <h2 class="source-doc-title">总编年史第二部分.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="总编年史第二部分" data-source-complete="true">
+          <h2 class="source-doc-title">总编年史第二部分</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Normal" data-source-text="对于1960年代之前的历史，本文没有提及到的可以直接将现实世界代入其中。">对于1960年代之前的历史，本文没有提及到的可以直接将现实世界代入其中。
             </p>
@@ -8288,8 +8562,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="总编年史.docx" data-source-complete="true">
-          <h2 class="source-doc-title">总编年史.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="总编年史" data-source-complete="true">
+          <h2 class="source-doc-title">总编年史</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="总编年史">总编年史
             </p>
@@ -8889,8 +9163,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City.docx" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">梦羊城Imagine Sheep City.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">梦羊城Imagine Sheep City</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="梦羊城  Imagine Sheep City">梦羊城  Imagine Sheep City
             </p>
@@ -9113,8 +9387,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="民间组织.docx" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
-          <h2 class="source-doc-title">民间组织.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="民间组织" data-source-complete="true" data-source-incomplete="true" style="display: none !important;">
+          <h2 class="source-doc-title">民间组织</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="民间组织">民间组织
             </p>
@@ -9352,8 +9626,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City.docx" data-source-complete="true">
-          <h2 class="source-doc-title">梦羊城Imagine Sheep City.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="梦羊城Imagine Sheep City" data-source-complete="true">
+          <h2 class="source-doc-title">梦羊城Imagine Sheep City</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Heading 1" data-source-text="梦羊城  Imagine Sheep City">梦羊城  Imagine Sheep City
             </p>
@@ -9590,8 +9864,8 @@
             </p>
           </div>
         </section>
-        <section class="source-doc-section" data-source-doc-name="民间组织.docx" data-source-complete="true">
-          <h2 class="source-doc-title">民间组织.docx</h2>
+        <section class="source-doc-section" data-source-doc-name="民间组织" data-source-complete="true">
+          <h2 class="source-doc-title">民间组织</h2>
           <div class="source-doc-body">
             <p class="source-doc-paragraph" data-source-doc-index="0" data-source-style="Title" data-source-text="民间组织">民间组织
             </p>
@@ -10334,11 +10608,7 @@
 
         const sourceTitle = sourceSection.querySelector('.source-doc-title');
         const sourceBody = sourceSection.querySelector('.source-doc-body');
-        if (sourceTitle) {
-          const cleanTitle = sourceTitle.cloneNode(true);
-          cleanTitle.textContent = cleanTitle.textContent.replace(/\.docx$/i, '');
-          article.appendChild(cleanTitle);
-        }
+        if (sourceTitle) article.appendChild(sourceTitle.cloneNode(true));
         if (sourceBody) article.appendChild(sourceBody.cloneNode(true));
         fragment.appendChild(article);
       });
@@ -10369,18 +10639,167 @@
       container.appendChild(host);
     }
 
-    replaceDocumentText('dir-content-mengyang', '.dh-mid-text', ['梦羊城Imagine Sheep City.docx'], false);
-    replaceDocumentText('dir-content-race', '.dh-mid-text', ['种族.docx'], false);
-    replaceDocumentText('dir-content-chronicle', '.dh-mid-text', ['总编年史第二部分.docx', '总编年史.docx'], false);
-    replaceDocumentText('dir-content-alchemy', '.dh-mid-text', ['猩猩也能看懂的炼金术原理.docx', '炼金术杂项.docx'], true);
-    replaceDocumentText('dir-content-god', '.dh-mid-text', ['神.docx'], false);
-    replaceDocumentText('dir-content-corruption-files', '.editable-content', ['腐蚀记录档案.docx'], false);
-    replaceDocumentText('dir-content-alchemy-misc', '.editable-content', ['炼金术杂项.docx'], false);
+    function buildCompanyArchive() {
+      const container = document.getElementById('dir-content-company');
+      const sourceSection = getCompleteSourceSection('公司');
+      const sourceBody = sourceSection ? sourceSection.querySelector('.source-doc-body') : null;
+      if (!container || !sourceBody) return;
 
-    appendDocumentText('dir-content-company', ['公司.docx']);
-    appendDocumentText('dir-content-official-org', ['官方组织.docx', '政权（括号里是简称）.docx']);
-    appendDocumentText('dir-content-civilian-org', ['民间组织.docx']);
-    appendDocumentText('dir-content-corruption', ['现实腐蚀.docx']);
+      const introNodes = [];
+      const companyGroups = [];
+      let currentGroup = null;
+
+      Array.from(sourceBody.children).forEach(node => {
+        const styleName = node.getAttribute('data-source-style') || '';
+        const sourceText = (node.getAttribute('data-source-text') || node.textContent || '').trim();
+        const startsCompany = styleName === 'Heading 2' && sourceText.length > 0;
+
+        if (startsCompany) {
+          currentGroup = { title: sourceText, nodes: [node] };
+          companyGroups.push(currentGroup);
+        } else if (currentGroup) {
+          currentGroup.nodes.push(node);
+        } else {
+          introNodes.push(node);
+        }
+      });
+
+      container.innerHTML = '';
+      container.classList.add('company-doc-layout');
+
+      if (introNodes.length) {
+        const intro = document.createElement('div');
+        intro.className = 'company-doc-intro';
+        introNodes.forEach(node => intro.appendChild(node.cloneNode(true)));
+        container.appendChild(intro);
+      }
+
+      const index = document.createElement('nav');
+      index.className = 'company-index-grid';
+      index.setAttribute('aria-label', '公司目录');
+
+      const articleList = document.createElement('div');
+      articleList.className = 'company-doc-list';
+
+      companyGroups.forEach((group, groupIndex) => {
+        const articleId = `company-archive-${groupIndex + 1}`;
+        const indexLink = document.createElement('a');
+        indexLink.className = 'company-index-card';
+        indexLink.href = `#${articleId}`;
+
+        const number = document.createElement('span');
+        number.className = 'company-index-number';
+        number.textContent = String(groupIndex + 1).padStart(2, '0');
+
+        const name = document.createElement('span');
+        name.className = 'company-index-name';
+        name.textContent = group.title;
+
+        const arrow = document.createElement('span');
+        arrow.className = 'company-index-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '↓';
+
+        indexLink.append(number, name, arrow);
+        index.appendChild(indexLink);
+
+        const article = document.createElement('article');
+        article.className = 'company-doc-article';
+        article.id = articleId;
+        group.nodes.forEach(node => article.appendChild(node.cloneNode(true)));
+        articleList.appendChild(article);
+      });
+
+      container.append(index, articleList);
+    }
+
+    function buildCivilianArchive() {
+      const container = document.getElementById('dir-content-civilian-org');
+      const sourceSection = getCompleteSourceSection('民间组织');
+      const sourceBody = sourceSection ? sourceSection.querySelector('.source-doc-body') : null;
+      if (!container || !sourceBody) return;
+
+      const introNodes = [];
+      const organizationGroups = [];
+      let currentGroup = null;
+
+      Array.from(sourceBody.children).forEach(node => {
+        const styleName = node.getAttribute('data-source-style') || '';
+        const sourceText = (node.getAttribute('data-source-text') || node.textContent || '').trim();
+        const startsOrganization = styleName === 'Heading 2'
+          || (styleName === 'Heading 1' && sourceText.length > 0 && sourceText !== '帮派');
+
+        if (startsOrganization) {
+          currentGroup = { title: sourceText, nodes: [node] };
+          organizationGroups.push(currentGroup);
+        } else if (currentGroup) {
+          currentGroup.nodes.push(node);
+        } else {
+          introNodes.push(node);
+        }
+      });
+
+      container.innerHTML = '';
+      container.classList.add('civilian-doc-layout');
+
+      if (introNodes.length) {
+        const intro = document.createElement('div');
+        intro.className = 'civilian-doc-intro';
+        introNodes.forEach(node => intro.appendChild(node.cloneNode(true)));
+        container.appendChild(intro);
+      }
+
+      const index = document.createElement('nav');
+      index.className = 'civilian-index-grid';
+      index.setAttribute('aria-label', '民间组织目录');
+
+      const articleList = document.createElement('div');
+      articleList.className = 'civilian-doc-list';
+
+      organizationGroups.forEach((group, groupIndex) => {
+        const articleId = `civilian-archive-${groupIndex + 1}`;
+        const indexLink = document.createElement('a');
+        indexLink.className = 'civilian-index-card';
+        indexLink.href = `#${articleId}`;
+
+        const number = document.createElement('span');
+        number.className = 'civilian-index-number';
+        number.textContent = String(groupIndex + 1).padStart(2, '0');
+
+        const name = document.createElement('span');
+        name.className = 'civilian-index-name';
+        name.textContent = group.title;
+
+        const arrow = document.createElement('span');
+        arrow.className = 'civilian-index-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '↓';
+
+        indexLink.append(number, name, arrow);
+        index.appendChild(indexLink);
+
+        const article = document.createElement('article');
+        article.className = 'civilian-doc-article';
+        article.id = articleId;
+        group.nodes.forEach(node => article.appendChild(node.cloneNode(true)));
+        articleList.appendChild(article);
+      });
+
+      container.append(index, articleList);
+    }
+
+    replaceDocumentText('dir-content-mengyang', '.dh-mid-text', ['梦羊城Imagine Sheep City'], false);
+    replaceDocumentText('dir-content-race', '.dh-mid-text', ['种族'], false);
+    replaceDocumentText('dir-content-chronicle', '.dh-mid-text', ['总编年史第二部分', '总编年史'], false);
+    replaceDocumentText('dir-content-alchemy', '.dh-mid-text', ['猩猩也能看懂的炼金术原理', '炼金术杂项'], true);
+    replaceDocumentText('dir-content-god', '.dh-mid-text', ['神'], false);
+    replaceDocumentText('dir-content-corruption-files', '.editable-content', ['腐蚀记录档案'], false);
+    replaceDocumentText('dir-content-alchemy-misc', '.editable-content', ['炼金术杂项'], false);
+
+    buildCompanyArchive();
+    appendDocumentText('dir-content-official-org', ['官方组织', '政权（括号里是简称）']);
+    buildCivilianArchive();
+    appendDocumentText('dir-content-corruption', ['现实腐蚀']);
 
     const otherTriggers = document.querySelectorAll('.nav-trigger');
     otherTriggers.forEach(trigger => {
@@ -11094,7 +11513,7 @@
             setTimeout(() => {
                 panelThumb.src = img ? img.src : '';
                 panelTitle.textContent = title ? title.textContent : '';
-                panelText.textContent = detail ? detail.textContent : '';
+                panelText.innerHTML = detail ? detail.innerHTML : '';
 
                 panelThumb.style.animation = 'none';
                 panelTitle.style.animation = 'none';
