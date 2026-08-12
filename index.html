@@ -3161,6 +3161,99 @@
       .dyn-card.expanded .dyn-card-detail { width: 100%; }
       .dyn-card-detail-inner { padding: 1.5vh 4vw; font-size: 0.82rem; }
   }
+
+  /* Readability pass: consistent, high-contrast text across every page. */
+  body {
+    color: #d8dde2;
+  }
+
+  .navbar {
+    color: #121212;
+  }
+
+  .isc-logo,
+  .nav-links > a {
+    color: #121212;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  .isc-logo:hover,
+  .nav-links > a:hover {
+    color: #00343a;
+    text-shadow: 0 0 7px rgba(0, 52, 58, 0.28);
+  }
+
+  .nav-links > a::after {
+    background: #121212;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+  }
+
+  .sentry-ring {
+    stroke: #121212;
+  }
+
+  .sentry-rhombus {
+    fill: #121212;
+    stroke: #00343a;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+  }
+
+  .dir-body-text,
+  .source-doc-body,
+  .embedded-docx-text .source-doc-body,
+  .editable-content,
+  .dh-mid-text,
+  .dh-mid-text p {
+    color: #d8dde2;
+  }
+
+  #dir-content-company .company-doc-article,
+  #dir-content-civilian-org .civilian-doc-article {
+    color: #d8dde2;
+  }
+
+  #dir-content-company .company-doc-article > .source-doc-paragraph[data-source-style="Normal"],
+  #dir-content-civilian-org .civilian-doc-article > .source-doc-paragraph[data-source-style="Normal"] {
+    color: #d8dde2;
+  }
+
+  .company-index-name,
+  .civilian-index-name {
+    color: #f1f3f5;
+  }
+
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 1"],
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 2"] {
+    color: #ff9b21;
+  }
+
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 3"],
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 4"] {
+    color: #f0bd75;
+  }
+
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 5"],
+  .dh-mid-text .source-doc-paragraph[data-source-style="Heading 6"] {
+    color: #dbe5e8;
+  }
+
+  .dyn-card-text,
+  .dyn-card-detail-inner,
+  .dyn-detail-text {
+    color: #dce1e5;
+  }
+
+  .dyn-detail-close {
+    color: #e4e7ea;
+  }
+
+  .boot-percentage,
+  .loading-percentage {
+    color: #f4f4f4;
+    background: rgba(0, 0, 0, 0.76);
+    padding: 0 6px;
+    text-shadow: none;
+  }
 </style>
 </head>
 <body>
