@@ -139,11 +139,12 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #FF8C00;
+    color: #ffffff;
     font-weight: 900;
     font-size: 1.1rem;
-    text-shadow: 0 0 8px #FF8C00, 0 0 5px #000000;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.6);
     font-family: 'Orbitron', sans-serif;
+    z-index: 2;
   }
 
   #boot-start-btn {
@@ -1364,10 +1365,10 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: #FF8C00;
+    color: #ffffff;
     font-weight: 900;
     font-size: 1rem;
-    text-shadow: 0 0 8px #FF8C00, 0 0 5px #000000;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.6);
     z-index: 2;
     font-family: 'Orbitron', sans-serif;
   }
@@ -3249,8 +3250,9 @@
 
   .boot-percentage,
   .loading-percentage {
-    color: #FF8C00;
-    text-shadow: 0 0 8px #FF8C00, 0 0 12px rgba(255,140,0,0.5);
+    color: #ffffff;
+    text-shadow: 0 0 6px rgba(0,0,0,0.9), 0 0 12px rgba(0,0,0,0.6);
+    z-index: 2;
   }
 </style>
 </head>
@@ -3360,7 +3362,6 @@
         <div class="home-banner-overlay"></div>
         <div class="home-banner-content">
           <h1>ISC</h1>
-          <p>采用CH级城市管理AI技术，连接梦羊城的每一个角落</p>
         </div>
         <div class="home-banner-scroll-hint">SCROLL</div>
       </section>
