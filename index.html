@@ -944,8 +944,21 @@
 
   #dir-content-company .company-index-arrow {
     color: #00f3ff;
-    font-size: 1.1rem;
-    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    line-height: 0;
+  }
+
+  #dir-content-company .company-index-arrow svg {
+    width: 20px;
+    height: 10px;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  #dir-content-company .company-index-card:hover .company-index-arrow svg {
+    transform: translateY(2px);
   }
 
   #dir-content-company .company-doc-list {
@@ -1227,7 +1240,7 @@
 
     #dir-content-company .company-index-card {
       min-height: 76px;
-      grid-template-columns: 2.7rem minmax(0, 1fr) 1.2rem;
+      grid-template-columns: 2.7rem minmax(0, 1fr) 1.6rem;
       padding: 0.85rem 0.9rem;
     }
 
@@ -10790,7 +10803,7 @@
         const arrow = document.createElement('span');
         arrow.className = 'company-index-arrow';
         arrow.setAttribute('aria-hidden', 'true');
-        arrow.textContent = '↓';
+        arrow.innerHTML = '<svg viewBox="0 0 24 12" aria-hidden="true"><path d="M2 2 L12 10 L22 2" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
         indexLink.append(number, name, arrow);
         index.appendChild(indexLink);
