@@ -1026,7 +1026,7 @@
     width: 20px;
     height: 10px;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   #dir-content-company .company-index-card:hover .company-index-arrow svg {
@@ -1035,6 +1035,11 @@
 
   #dir-content-company .company-index-card.active .company-index-arrow svg {
     transform: rotate(180deg);
+  }
+
+  #dir-content-company .company-index-card.active {
+    border-color: rgba(0, 243, 255, 0.58);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.08), inset 0 0 18px rgba(255, 140, 0, 0.035);
   }
 
   #dir-content-company .company-doc-list {
@@ -1058,11 +1063,13 @@
     margin-bottom: 0;
     border-color: transparent;
     box-shadow: none;
-    transition: max-height var(--feed-duration, 5s) linear, border-color 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.5s ease;
+    opacity: 0;
+    transition: max-height 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.5s ease;
   }
 
   #dir-content-company .company-doc-article.expanded {
     max-height: 8000px;
+    opacity: 1;
     border-color: rgba(255, 140, 0, 0.15);
     box-shadow: inset 0 0 25px rgba(255, 140, 0, 0.022), 0 14px 38px rgba(0, 0, 0, 0.16);
     margin-bottom: 2.2rem;
@@ -1078,11 +1085,59 @@
     box-shadow: 0 0 10px rgba(255, 140, 0, 0.7), 0 0 18px rgba(0, 243, 255, 0.4);
     opacity: 0;
     z-index: 6;
-    transition: opacity 0.35s ease;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: opacity 0.25s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   #dir-content-company .company-doc-article.expanded .doc-feed-slot {
     opacity: 1;
+    transform: scaleX(1);
+  }
+
+  /* 档案解密揭示：内容不是一下子出现，而是从上往下揭开，
+     每段先模糊+下移+遮罩遮住，再依次变清晰浮现（前 8 段依次错开，
+     后面的统一在 0.58s 出现，避免长档案拖太久）。收起时不设延迟，立刻反向收回。 */
+  #dir-content-company .company-doc-article > .source-doc-paragraph,
+  #dir-content-company .company-doc-article .source-doc-image {
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(3px);
+    clip-path: inset(0 0 100% 0);
+    transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.55s ease, clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: 0s;
+  }
+
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph,
+  #dir-content-company .company-doc-article.expanded .source-doc-image {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+    clip-path: inset(0 0 0% 0);
+  }
+
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(1) { transition-delay: 0.10s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(2) { transition-delay: 0.16s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(3) { transition-delay: 0.22s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(4) { transition-delay: 0.28s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(5) { transition-delay: 0.34s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(6) { transition-delay: 0.40s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(7) { transition-delay: 0.46s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(8) { transition-delay: 0.52s; }
+  #dir-content-company .company-doc-article.expanded > .source-doc-paragraph:nth-child(n+9) { transition-delay: 0.58s; }
+  #dir-content-company .company-doc-article.expanded .source-doc-image { transition-delay: 0.30s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    #dir-content-company .company-doc-article,
+    #dir-content-company .company-doc-article > .source-doc-paragraph,
+    #dir-content-company .company-doc-article .source-doc-image,
+    #dir-content-company .company-doc-article .doc-feed-slot,
+    #dir-content-company .company-index-arrow svg {
+      transition: none;
+      clip-path: none;
+      filter: none;
+      transform: none;
+    }
   }
 
   #dir-content-company .company-doc-article::before,
@@ -3639,7 +3694,10 @@
   /* 手风琴：原来 max-height 用 --feed-duration 做 2.5~7 秒线性“喂入”，
      看起来像卡住 / 打不开。改成 0.45 秒正常展开。 */
   .dir-body-text { transition: max-height 0.45s ease; }
-  #dir-content-company .company-doc-article,
+  /* 公司页：档案解密揭示，0.65s 缓动 + 淡入（见上方解密规则） */
+  #dir-content-company .company-doc-article {
+    transition: max-height 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.5s ease;
+  }
   #dir-content-civilian-org .civilian-doc-article {
     transition: max-height 0.5s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.5s ease;
   }
