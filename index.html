@@ -934,6 +934,40 @@
     letter-spacing: 0.22em;
   }
 
+  /* 目录卡片区 + 一键收起按钮 */
+  .archive-index-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .archive-index-bar .company-index-grid,
+  .archive-index-bar .civilian-index-grid {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .archive-collapse-btn {
+    padding: 0.45rem 1.15rem;
+    font-family: 'Orbitron', 'Microsoft YaHei', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #FF8C00;
+    background: rgba(255, 140, 0, 0.06);
+    border: 1px solid rgba(255, 140, 0, 0.45);
+    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0% 100%);
+    cursor: pointer;
+    transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+  }
+
+  .archive-collapse-btn:hover {
+    color: #0b0f12;
+    background: #FF8C00;
+    box-shadow: 0 0 14px rgba(255, 140, 0, 0.6);
+  }
+
   #dir-content-company .company-index-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1858,6 +1892,182 @@
 
   .editable-content p strong {
     display: inline;
+  }
+
+  /* ---- 文档正文排版（官方组织详情 / 腐蚀档案） ---- */
+  .editable-content .doc-h {
+    text-indent: 0;
+    margin: 2.2vh 0 1vh;
+    color: #FF8C00;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    font-size: 1rem;
+    border-left: 3px solid rgba(255, 140, 0, 0.65);
+    padding-left: 0.7rem;
+    line-height: 1.7;
+  }
+
+  .editable-content .doc-p {
+    text-indent: 2em;
+    margin-bottom: 1.4vh;
+    line-height: 2;
+  }
+
+  .editable-content .doc-li {
+    text-indent: 0;
+    margin: 0 0 0.5vh 1.6em;
+    line-height: 1.85;
+    position: relative;
+  }
+
+  .editable-content .doc-li::before {
+    content: "";
+    position: absolute;
+    left: -1em;
+    top: 0.95em;
+    width: 6px;
+    height: 1px;
+    background: rgba(255, 140, 0, 0.65);
+  }
+
+  .cv-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2vh 0 2.4vh;
+    padding: 1.2vh 1vw;
+    border: 1px solid rgba(255, 140, 0, 0.18);
+    background: rgba(255, 140, 0, 0.03);
+  }
+
+  .cv-step {
+    padding: 0.35rem 0.9rem;
+    border: 1px solid rgba(255, 140, 0, 0.45);
+    color: #e7b36d;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    background: rgba(255, 140, 0, 0.06);
+  }
+
+  .cv-step-top {
+    border-color: #FF8C00;
+    color: #0d0d0d;
+    background: #FF8C00;
+    font-weight: 700;
+  }
+
+  .cv-arrow {
+    color: rgba(255, 140, 0, 0.6);
+    font-size: 0.85rem;
+  }
+
+  .cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1vh 0 2.4vh;
+    font-size: 0.92rem;
+  }
+
+  .cv-table thead th {
+    text-align: left;
+    font-weight: 600;
+    color: #FF8C00;
+    letter-spacing: 0.08em;
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.5);
+    background: rgba(255, 140, 0, 0.07);
+    white-space: nowrap;
+  }
+
+  .cv-table tbody td {
+    padding: 0.7rem 0.9rem;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.13);
+    color: #cfcfcf;
+    line-height: 1.7;
+    vertical-align: top;
+  }
+
+  .cv-table tbody tr:hover td {
+    background: rgba(255, 140, 0, 0.04);
+  }
+
+  .cv-lv {
+    color: #e7b36d !important;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .cv-lv-top {
+    color: #FF8C00 !important;
+  }
+
+  .cv-rank {
+    font-family: "Orbitron", monospace;
+    color: #00f3ff !important;
+    letter-spacing: 0.1em;
+  }
+
+  .cv-rank-top {
+    color: #ff3b3b !important;
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.5);
+  }
+
+  @media (max-width: 768px) {
+    .cv-table { font-size: 0.82rem; }
+    .cv-table thead th, .cv-table tbody td { padding: 0.55rem 0.5rem; }
+    .cv-chain { gap: 0.3rem; }
+    .cv-step { padding: 0.28rem 0.55rem; font-size: 0.8rem; }
+  }
+
+  .rec-card {
+    border: 1px solid rgba(255, 140, 0, 0.28);
+    border-left: 3px solid rgba(255, 140, 0, 0.75);
+    background: rgba(255, 140, 0, 0.035);
+    padding: 1.6vh 1.4vw 1.9vh;
+    margin-bottom: 2.4vh;
+  }
+
+  .rec-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #FF8C00;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.2vh;
+    text-shadow: 0 0 14px rgba(255, 140, 0, 0.35);
+  }
+
+  .rec-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.4vh 1.6vw;
+    margin-bottom: 1.4vh;
+    padding-bottom: 1.2vh;
+    border-bottom: 1px dashed rgba(255, 140, 0, 0.22);
+  }
+
+  .rec-row {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    line-height: 1.8;
+  }
+
+  .rec-k {
+    color: rgba(255, 140, 0, 0.85);
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .rec-v {
+    color: #d8d8d8;
+  }
+
+  .editable-content .rec-secret {
+    border-left: 2px solid #ff3b3b;
+    padding-left: 0.8rem;
+    background: rgba(255, 59, 59, 0.05);
   }
 
   #home-view {
@@ -3414,6 +3624,72 @@
     color: #e4e7ea;
   }
 
+
+  /* ===== 2026-11-14 修复：不再全屏加载 / 不再遮挡 / 不再慢速展开 ===== */
+  #loading-overlay { display: none !important; }
+  .main-content { scroll-behavior: smooth; }
+  .scroll-section { padding: 4% 6%; }
+  .dir-main-title { white-space: normal; height: auto; line-height: 1.25; font-size: 2.2rem; }
+
+  /* 顶部下拉菜单：用 max-height 收起/展开，高度自适应，不再固定 50vh 盖住正文 */
+  .sub-panel { height: auto; max-height: 0; transition: max-height 0.35s ease, border-color 0.35s ease; }
+  .sub-panel.active { height: auto; max-height: 64vh; overflow-y: auto; }
+  #panel-wiki .panel-content { grid-template-rows: none; grid-auto-rows: auto; row-gap: 1.2vh; }
+
+  /* 手风琴：原来 max-height 用 --feed-duration 做 2.5~7 秒线性“喂入”，
+     看起来像卡住 / 打不开。改成 0.45 秒正常展开。 */
+  .dir-body-text { transition: max-height 0.45s ease; }
+  #dir-content-company .company-doc-article,
+  #dir-content-civilian-org .civilian-doc-article {
+    transition: max-height 0.5s ease, border-color 0.4s ease, box-shadow 0.4s ease, margin-bottom 0.5s ease;
+  }
+  .dir-content-wrapper { overflow-wrap: anywhere; }
+  .dir-body-text, .editable-content, .dh-mid-text { overflow-wrap: anywhere; }
+
+  /* dh 系列页面：原来 .dh-layout-wrapper 是 position:absolute + height:100%，
+     脱离文档流，会盖住目录标题；.dh-overlap-container 又是 absolute top:30vh，
+     正好压在正文上；左栏 3fr 占了 30% 宽度还把 ARIESD 每个字母旋转 -90° 斜放。
+     改成正常文档流布局，左栏只留窄竖排，标题盒放到正文上方。 */
+  .dh-layout-wrapper { position: relative; top: auto; left: auto; width: 100%; height: auto; min-height: 0; overflow: visible; z-index: 1; }
+  .dh-layout-grid { grid-template-columns: 72px minmax(0, 1fr) 40px; min-height: 0; }
+  .dh-col-left { padding: 2vh 0 0; align-items: center; overflow: visible; }
+  .dh-col-left span { font-size: 2.6rem; line-height: 1.05; transform: none; -webkit-text-stroke: 1px rgba(255, 140, 0, 0.4); text-shadow: 0 0 10px rgba(255, 140, 0, 0.2); }
+  .dh-col-mid { overflow: visible; min-width: 0; }
+  .dh-mid-text { flex: none; overflow: visible; }
+  .dh-mid-split { min-height: 0; }
+  .dh-mid-split .dh-mid-text { justify-content: flex-start; }
+  .dh-overlap-container { position: relative; top: auto; left: auto; width: 100%; max-width: 100%; grid-column: 1 / -1; order: -1; margin: 0 0 2vh; z-index: 1; }
+  .dh-teal-box { width: 100%; }
+  .dh-teal-box h1 { font-size: 1.9rem; white-space: normal; letter-spacing: 3px; }
+  .dh-overlap-lightblue { display: none; }
+  .dh-col-right { padding: 2vh 0; }
+
+  /* 首页详情弹窗：原来 width:50vw + skewX(-3deg) + clip-path 斜切，
+     文字会被斜切边缘截断，面板还盖住半个页面。改成正常矩形卡片，固定在右下角。 */
+  .dyn-detail-panel { transform: translateY(-50%); clip-path: none; width: min(560px, 92vw); right: -620px; max-height: min(78vh, 720px); }
+  .dyn-detail-panel.show { right: 16px; }
+  .dyn-detail-thumb { width: 64px; height: 48px; flex: 0 0 auto; }
+  .dyn-detail-title { overflow-wrap: anywhere; min-width: 0; }
+  .dyn-detail-body { overflow-y: auto; }
+
+  /* 鼠标光晕改淡，避免满屏发光干扰阅读（拖尾画布见 JS，已停用） */
+  .mouse-glow { opacity: 0.35; }
+
+  /* 新增的设表模板表格 */
+  .sheet-table { width: 100%; border-collapse: collapse; margin: 1.5vh 0 2vh; font-size: 0.95rem; }
+  .sheet-table th, .sheet-table td { border: 1px solid rgba(255, 140, 0, 0.3); padding: 8px 12px; text-align: left; vertical-align: top; }
+  .sheet-table th { color: #FF8C00; white-space: nowrap; width: 7em; }
+  .sheet-note { color: #9fb3b8; font-size: 0.9rem; }
+  .about-text-box p { margin-bottom: 1em; }
+  .about-text-box p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) {
+    .dh-layout-grid { grid-template-columns: 1fr; }
+    .dh-col-left { display: none; }
+    .dyn-detail-panel { width: calc(100vw - 32px); right: -110vw; }
+    .dyn-detail-panel.show { right: 16px; }
+    .sub-panel.active { max-height: 64vh; }
+  }
+
   .boot-percentage,
   .loading-percentage {
     color: #ffffff;
@@ -3599,7 +3875,7 @@
 
           <div class="about-section" style="margin-top:8vh;">
             <h2 class="section-title fx-glitch fx-reveal" data-text="关于我们">关于我们</h2>
-            <div class="about-text-box fx-reveal-left fx-shimmer fx-border-trace">待输入</div>
+            <div class="about-text-box fx-reveal-left fx-shimmer fx-border-trace"><p>ISC 是梦羊城的世界观资料站。这里收录了梦羊城的城市设定、种族、神秘术、炼金术、编年史，以及官方组织与民间组织的档案，供玩家在入群、创建角色和跑团前查阅。</p><p>如果你是第一次来，建议先看「梦羊城」了解这座城市，再看「种族」和「神秘术」了解角色能做什么，最后到「群号获取」找到审群、水群和戏群。</p><p>本站内容由社区成员共同整理，设定以站内各百科页面为准；如发现错误或缺漏，欢迎在水群反馈。</p></div>
           </div>
 
           <div class="osc-bounding-box" id="section-oscilloscope" style="margin-top:6vh;">
@@ -3681,7 +3957,6 @@
         
         <div id="dir-common-header">
             <div class="dir-main-title" id="dir-dynamic-title">动态标题</div>
-            <div class="dir-catalog-box">目录</div>
         </div>
 
         <div id="dir-content-company" class="dir-specific-content" style="display: none;"></div>
@@ -3735,13 +4010,74 @@
           <div class="dir-content-wrapper">
             <div class="dir-sub-title">现实腐蚀</div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">一种会将现实向不宜居扭曲的频率，其原理至今尚未解明。表现多为超极端气象、地质灾害和超自然现象极度频发。伴随腐蚀一起出现的怪物被称为现实腐蚀体，正常生物在腐蚀作用下发生扭曲而诞生的怪物被称为现实扭曲体。</div>
+            <div class="dir-body-text">一种会将现实向不宜居方向扭曲的频率，其原理至今尚未解明。表现多为超极端气象、地质灾害和超自然现象极度频发。伴随腐蚀一起出现的怪物被称为现实腐蚀体；正常生物在腐蚀作用下发生扭曲而诞生的怪物，被称为现实扭曲体。</div>
+            <div class="dir-body-text">腐蚀体与扭曲体最直观的差距是：腐蚀体有更多拥有智慧的可能，且同级同源的腐蚀体对扭曲体拥有绝对的控制权。二者均可离开腐蚀区行动。</div>
           </div>
+
           <div class="dir-content-wrapper">
-            <div class="dir-sub-title">腐蚀等级划分</div>
+            <div class="dir-sub-title">腐蚀的分类</div>
             <div class="dir-divider"></div>
-            <div class="dir-body-text">池（10～100km²）＜潭（100～1000km²）＜湖/河（1000～10000km²）＜海（10000km²以上）。腐蚀体强度：扭曲体＜腐蚀体＜精英扭曲体＜精英腐蚀体＜潭级领主＜湖级领主＜腐蚀之王。</div>
+            <div class="dir-body-text">现有的现实腐蚀共分两类：<strong>灾害型</strong>多为各类灾害的强化版，破坏力极强；<strong>思绪型</strong>归类相对混杂，所有非自然现象皆归于此，多为精神与情绪层面，物理破坏较少，但危险性丝毫不亚于灾害型。</div>
           </div>
+
+          <div class="dir-content-wrapper">
+            <div class="dir-sub-title">腐蚀井</div>
+            <div class="dir-divider"></div>
+            <div class="dir-body-text">现实腐蚀的源头，腐蚀以此为中心点向外蔓延。若将腐蚀井摧毁或堵塞，它就会停止对已覆盖地区的腐蚀；此时只要处理掉已腐蚀的区域，就能彻底清除腐蚀。</div>
+          </div>
+
+          <div class="dir-content-wrapper">
+            <div class="dir-sub-title">等阶划分</div>
+            <div class="dir-divider"></div>
+            <div class="dir-body-text">按其最大影响范围由小到大区分，依次为池 ＜ 潭 ＜ 湖／河 ＜ 海（一般只有狭长型腐蚀区才称作「河」）。</div>
+            <div class="cv-chain">
+              <span class="cv-step">池</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">潭</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">湖／河</span><span class="cv-arrow">＜</span>
+              <span class="cv-step cv-step-top">海</span>
+            </div>
+            <table class="cv-table">
+              <thead>
+                <tr><th>等阶</th><th>影响范围</th><th>说明</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="cv-lv">池</td><td>10 ～ 100 km²</td><td>最小规模的腐蚀区，通常只有单个腐蚀井</td></tr>
+                <tr><td class="cv-lv">潭</td><td>100 ～ 1,000 km²</td><td>达到潭级后，最强大的一个腐蚀体有概率被赐福晋升为领主</td></tr>
+                <tr><td class="cv-lv">湖／河</td><td>1,000 ～ 10,000 km²</td><td>狭长型腐蚀区称作「河」；近海的腐蚀河逼近远海时会停止蔓延并横向扩张，逐渐变为腐蚀湖</td></tr>
+                <tr><td class="cv-lv cv-lv-top">海</td><td>10,000 km² 以上</td><td>体量巨大，可孕育腐蚀之王；其中的领主只能操控同类型的腐蚀体</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dir-content-wrapper">
+            <div class="dir-sub-title">腐蚀体强度划分</div>
+            <div class="dir-divider"></div>
+            <div class="cv-chain">
+              <span class="cv-step">扭曲体</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">腐蚀体</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">精英扭曲体</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">精英腐蚀体</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">潭级领主</span><span class="cv-arrow">＜</span>
+              <span class="cv-step">湖级领主</span><span class="cv-arrow">＜</span>
+              <span class="cv-step cv-step-top">腐蚀之王</span>
+            </div>
+            <table class="cv-table">
+              <thead>
+                <tr><th>强度等级</th><th>对应评级</th><th>备注</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="cv-lv">扭曲体</td><td class="cv-rank">—</td><td>普通人</td></tr>
+                <tr><td class="cv-lv">腐蚀体</td><td class="cv-rank">D</td><td>—</td></tr>
+                <tr><td class="cv-lv">精英扭曲体</td><td class="cv-rank">C</td><td>达到潭级后，第一批扭曲体的变异进化形态</td></tr>
+                <tr><td class="cv-lv">精英腐蚀体</td><td class="cv-rank">B</td><td>池级只有一个</td></tr>
+                <tr><td class="cv-lv">潭级领主</td><td class="cv-rank">A</td><td>可操控同一腐蚀井的腐蚀体与扭曲体</td></tr>
+                <tr><td class="cv-lv">湖级领主</td><td class="cv-rank">S</td><td>领主之间可互相转化，被转化方实力下降</td></tr>
+                <tr><td class="cv-lv cv-lv-top">腐蚀之王</td><td class="cv-rank cv-rank-top">???</td><td>海级本源所化，可直接操控腐蚀海内所有腐蚀体（含领主）</td></tr>
+              </tbody>
+            </table>
+            <div class="dir-body-text">腐蚀区之间接触即开始融合，强势方会吞并弱势方并同化其影响形式；若双方皆有领主，腐蚀体会同时听从两位领主的命令。腐蚀区还会因领主的后续影响发生异变，可能诞生从未出现过的腐蚀体与扭曲体。</div>
+          </div>
+
           <div class="inner-link-container">
             <a class="nav-trigger inner-link-btn" data-dir="corruption-files">现实腐蚀收容档案</a>
           </div>
@@ -3751,7 +4087,11 @@
           <div class="dir-content-wrapper">
             <div class="dir-sub-title">档案记录</div>
             <div class="dir-divider"></div>
-            <div class="editable-content">内容待编辑</div>
+            <div class="editable-content">
+<div class="rec-card"><div class="rec-name">［潘多拉］</div><div class="rec-meta"><div class="rec-row"><span class="rec-k">种类</span><span class="rec-v">灾害型</span></div><div class="rec-row"><span class="rec-k">已知最大等阶</span><span class="rec-v">海</span></div><div class="rec-row"><span class="rec-k">腐蚀井所在地</span><span class="rec-v">原麻省埃塞克斯县</span></div><div class="rec-row"><span class="rec-k">覆盖地区</span><span class="rec-v">原马萨诸塞州全境；原纽约州哥伦比亚县和伦斯勒县；原康涅狄格州利奇菲尔德县、哈特福德县、托兰德县、温德姆县；原新罕布什尔州切希尔县、希尔斯伯勒县、罗金厄姆县；原佛蒙特州本宁顿县</span></div></div><p class="doc-p">介绍：［潘多拉］腐蚀海拥有目前为止已知的所有灾害型现实腐蚀的特征，它们分布于不同的区块。蒙萨九号作战失败之后，［潘多拉］境内发生了巨大的变化，除了地形更加险峻和腐蚀更加严重之外，还疑似出现了多个比肩领主的目标。</p><p class="doc-h">环境特征：内部多个区域分部着不同的灾害。在进入腐蚀区后，天空会变成黑色，空中挂着一颗永远不会变换位置的黑色太阳。</p><p class="doc-p rec-secret"><strong>绝密：</strong>［潘多拉］的巨大变化来源于其中诞生的腐蚀之王“黑日”。蒙萨九号作战中，他展现出了恐怖的物质扭曲能力，根据幸存者的描述，在“黑日”的能力影响下，地面上的战车坦克、天空中的飞机、水中的战舰都被活化成了真正意义上的钢铁巨兽，武器也都在他的扭曲下化为尘埃。推测，这位王者拥有扭曲物体与能量的能力。</p></div>
+<div class="rec-card"><div class="rec-name">［普赛克］</div><div class="rec-meta"><div class="rec-row"><span class="rec-k">种类</span><span class="rec-v">思绪型</span></div><div class="rec-row"><span class="rec-k">已知最大等级</span><span class="rec-v">海</span></div><div class="rec-row"><span class="rec-k">腐蚀井所在地</span><span class="rec-v">卢森堡市</span></div><div class="rec-row"><span class="rec-k">覆盖地区</span><span class="rec-v">卢森堡全境和法、德、比利时和卢森堡接壤的地区</span></div></div><p class="doc-p">介绍：［普赛克］覆盖的区域会展开庞大的梦域，光用肉眼无法观察到梦域的边界，若在梦中停留太久，肉体会开始扭曲，变成扭曲体［梦游者］。普赛克范围内还会不断出现一种名为［梦妖］的腐蚀体，他们会强制将外界的人拉入梦境，并将其杀死，人们付出了无比巨大的代价才终于试出了梦域边境，并将其封锁，好在目前［普赛克］没有扩张的迹象。</p><p class="doc-h">环境特征</p><p class="doc-p rec-secret"><strong>绝密：</strong>在仅有的几次与［普斯克］的腐蚀体交流的过程中，我们了解到［普赛克］内似乎有一个极其强大的存在，被腐蚀体们尊称为“母神”，推测，可能是一位与［黑日］同级别的存在。</p></div>
+<div class="rec-card"><div class="rec-name">［电子域］</div><div class="rec-meta"><div class="rec-row"><span class="rec-k">种类</span><span class="rec-v">思绪型</span></div><div class="rec-row"><span class="rec-k">已知最大等级</span><span class="rec-v">湖</span></div></div><p class="doc-p">介绍：［电子域］覆盖地区会出现许多具有未来感的城市，科技水平远超现代。通过城市内随处可见的屏幕，一种名为［数网魔］的现实腐蚀体可以利用网络操控与扭曲注视屏幕的生物，将其转化为扭曲体［网民］，这种扭曲体出现后，手中会出现一部电子设备在扭曲到最后阶段后，网民的身体会机械化或数据化，脸部会变成经典的emoji表情，［网民］可通过电子设备将数据实体化，进行攻击。还有一种名为［科研者］的腐蚀体，他们痴迷于对高科技机器的制造，若有生物被其抓获，会被改造成名为［“实验体”］的扭曲体。</p><p class="doc-h">环境特征：多为高科技城市，越靠近腐蚀井越先进，大街上几乎有随处可见的屏幕，核心区域甚至几乎即使由屏幕构成。穿过屏幕可进入虚拟世界，但虚拟世界的腐蚀强度翻倍。</p></div>
+</div>
           </div>
         </div>
 
@@ -3759,7 +4099,7 @@
           <div class="dir-content-wrapper">
             <div class="dir-sub-title">致谢名单</div>
             <div class="dir-divider"></div>
-            <div class="editable-content">内容待编辑</div>
+            <div class="editable-content"><p><strong>设定与文案：</strong>感谢为梦羊城、公司、官方组织、民间组织、神秘术、炼金术、编年史和现实腐蚀撰写原稿的作者们，没有这些原稿，就没有这个资料站。</p><p><strong>图片与素材：</strong>感谢提供城市、组织与角色相关图片的创作者。</p><p><strong>测试与反馈：</strong>感谢在建站过程中帮忙点开每一个页面、指出加载慢、菜单打不开、文字被遮住等问题的玩家。</p><p class="sheet-note">具体名单由站长陆续补充：把要感谢的名字发给站长即可上榜。</p></div>
           </div>
         </div>
 
@@ -3840,25 +4180,110 @@
           </div>
         </div>
         <div id="dir-content-official-inner-1" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
+<p class="doc-p">RCCO是根据RCCA建立的全球性组织，负责一切和现实腐蚀有关的事务，无论牵扯到什么，只要跟腐蚀沾上一点，他们就有权力介入甚至接管此事。RCCO素来以“不讲道理”的强硬态度闻名，一方面是因为他们的确享有非常高的执法权，甚至不需要法院或检察院的任何批准就可以实施搜查和逮捕；另一方面是因为他们认为自己的所作所为是在保护文明，对于某些人来说，为了让文明延续而牺牲一些礼貌和道德，非常划算。</p>
+<p class="doc-h">【组织架构】</p>
+<p class="doc-p">『委员会』RCCO最高领导和决策机构，由51名委员和一名秘书长组成。秘书长五年一换，由委员从RCCO各分局领导层中提名和选举产生，委员在产生新任秘书长后进行换届选举。</p>
+<p class="doc-p">『行政处』负责管理和其他日常事务：分局局长办公室、财务部、人事部、通信部、医疗部、后勤部、公关宣传部、协调部</p>
+<p class="doc-p">『行动处』负责执行各类行动：常规作战司令部、水面和水下作战司令部、空天作战司令部、特种作战司令部、情报收集和分析办公室</p>
+<p class="doc-p">『工程处』负责研究和分析现实腐蚀，负责设计和生产特种设备</p>
+<p class="doc-li">『监察处』负责内部反贪腐，监察违规行为</p>
+<p class="doc-h">【职称等级】</p>
+<p class="doc-li">（由低到高）</p>
+<p class="doc-li">见习人员</p>
+<p class="doc-li">（1-5级）干员/（1-3级）研究员（文职）</p>
+<p class="doc-li">精英干员/高级研究员（文职）</p>
+<p class="doc-li">高级精英干员/管理员（文职）</p>
+<p class="doc-li">指挥官/主管（文职）</p>
+<p class="doc-li">司令官/部长</p>
+<p class="doc-li">处长</p>
+<p class="doc-li">分局局长</p>
+<p class="doc-li">委员</p>
+</div></div>
         </div>
         <div id="dir-content-official-inner-2" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
+<p class="doc-h">概述</p>
+<p class="doc-p">梦羊城是一座资本主义制度下的自由民主城市，市民通过不记名的方式民主选出市长和101名市议会议员——至少宣传册上没有提到公司操控政治的事，至于现实情况是什么你就别问了，那对你身体没好处。</p>
+<p class="doc-p">市长是城市的最高统治代表。他们负责监督并指挥城市各部门运作，有权任命部门负责人和专员，并罢免公职人员。每当新市长上任，办公室和人员都会随之而来。</p>
+<p class="doc-p">该市的治理体系基于市长与市议会的权威。市长的部分提案需经议会批准。</p>
+</div></div>
         </div>
         <div id="dir-content-official-inner-3" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
+<p class="doc-p">神秘术和炼金术是比较唯心的东西，但它们的管理必须唯物。为了规范梦羊城内神秘术和炼金术的合理使用，市政府专门成立了梦羊城神秘术和炼金术管理局，简称“神炼局”，或者玩梗一点，你也可以叫他们“蝙蝠”。</p>
+<p class="doc-p">神炼局是这座城市的《神秘术、神秘术士和神秘术制品、炼金术和炼金术造物管理法》的主要执法单位，主要职责便是根据该法律的条款，对私人，企业及组织持有的一系列制品或在市面上流通的制品进行评级，收缴，同时对违反该法律的团体及个人进行抓捕，并依法进行处罚。此外，神炼局亦承担着统计、管理、教育梦羊城城内的神秘术士和炼金术士</p>
+<p class="doc-h">【组织架构】</p>
+<p class="doc-p">『局长办公室』：由一名局长、两名副局长，以及若干文职人员组成。负责人事、财务、宣传等工作的部门亦归属于局长办公室。</p>
+<p class="doc-p">『相关制品管制处』：负责炼金制品及神秘术载体的分类定级，备案，追溯及查验。下设“定级审核科”与“许可审核科”</p>
+<p class="doc-p">『案件调查处』：统筹全市神秘术及炼金术违法案件和安全事故查处，指导各区执法大队开展行动，证据固定及收缴。</p>
+<p class="doc-p">『背景筛查及指导处』：负责涉事人员的背景筛查与对接辖区内企业，机构组织，与特定人员的咨询与指导。</p>
+<p class="doc-p">『技术鉴定处』：由该局直属的事业单位，是本市少数的具备法定鉴定资质的物质检测机构</p>
+<p class="doc-h">【职称等级】</p>
+<p class="doc-li">（由低到高）</p>
+<p class="doc-li">见习人员</p>
+<p class="doc-p">（1~3级）干员/（1~3级）鉴定师（文职）/指导处干员（文职）</p>
+<p class="doc-p">资深调查员/高级鉴定师（文职）/高级指导师（文职）</p>
+<p class="doc-p">调查处督导/资深鉴定师（文职）/指导处科长（文职）</p>
+<p class="doc-li">处长</p>
+<p class="doc-li">副局长</p>
+<p class="doc-li">总局长</p>
+</div></div>
         </div>
         <div id="dir-content-official-inner-4" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
+<p class="doc-p">如果要选举梦羊城最苦逼的政府机构，那ISPD一定榜上有名。这个由5万多人组成的执法机构负责梦羊城的治安，从忘带钥匙到杀人放火，只要是条子应该干的事，ISPD都得去干。但ISPD远没有想象中的威风，梦羊城是一个巨大的舞台，ISPD就是舞台边缘的剧场保安。他不能把台上的演员赶走，更不能惹恼台下的观众，恰好卡在一个尴尬的位置。腐败司空见惯，暗杀和袭击屡见不鲜，ISPD就这样如履薄冰的度过每一天——好吧，犯罪率还是降不下来。</p>
+<p class="doc-h">【组织架构】</p>
+<p class="doc-p">『局长办公室』：ISPD的领导班子，由总局和各分局的正副局长以及若干文职人员组成</p>
+<p class="doc-li">『巡警』</p>
+<p class="doc-p">以分局为单位组建中队，每个中队又根据辖区情况由若干个小队组成，每个小队包含5个由1-3名巡警和一辆警车组成的车组。从指挥交通到追捕劫匪，他们是你最常见的条子。</p>
+<p class="doc-p">街头战术单位（Street Tactics Unit）：4人为一组，驾驶无标识警车在指定的地区巡逻。比起普通巡警，STU拥有更强的火力、更多的战术装备和更高的战斗素养</p>
+<p class="doc-li">『特警』</p>
+<p class="doc-p">梦羊城特警大队由总局统一指挥，平时驻扎在市内各个驻地里以便快速响应。</p>
+<p class="doc-p">机动特遣队“B-6”（Mobile Task Force &#x27;Bravo Six&#x27;）：准军事化精英特警小队，专为应对高敏感和高危事件而生，以冷酷无情、手段狠辣闻名。</p>
+<p class="doc-li">『刑警』</p>
+<p class="doc-li">刑警的指挥权没有下放到分局，全部接受总局指挥。</p>
+<p class="doc-li">『技术警种』</p>
+<p class="doc-p">包括检验科、维护科和网络安全科三个部门，各自的职责人如其名。</p>
+<p class="doc-li">『协警』</p>
+<p class="doc-p">协警的本质是ISPD招募的协助警察执行任务的志愿者。尽管他们穿着警服，但协警没有执法权，也不在ISPD的体制内。协警一般承担疏导交通等比较轻松的工作。</p>
+<p class="doc-li">『综合部』</p>
+<p class="doc-li">负责人事、财务、宣传等工作</p>
+<p class="doc-h">【职称等级】</p>
+<p class="doc-li">警员</p>
+<p class="doc-li">警探</p>
+<p class="doc-li">警司（分局中队长）</p>
+<p class="doc-li">警督</p>
+<p class="doc-li">警监（分局局长）</p>
+<p class="doc-li">副局长</p>
+<p class="doc-li">局长</p>
+</div></div>
         </div>
         <div id="dir-content-official-inner-5" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
+<p class="doc-p">火灾、心梗、溺水……当你需要急救但又不是安全国际会员的时候，ISEA将会是你最后的希望，虽然他们的出警也要收费。ISEMA的使命是在灾难发生之前、期间和之后为人们提供帮助。他们与个人和公司合作，通过积极的社区动员、培训、教育和规划来促进居民积极主动地为潜在的紧急情况和灾难做好准备。灾难降临之后，应急管理部将协调派遣可用的力量进行救援，力求在赢利的同时将灾情损失降至最低。灾难发生后，他们帮助社区重建更强大的社区，以减少未来的灾害损失并提高社区的恢复力。</p>
+<p class="doc-h">【组织架构】</p>
+<p class="doc-li">『消防管理司』</p>
+<p class="doc-li">负责全市火灾预防、灭火救援和各场所消防安全检查。</p>
+<p class="doc-li">『紧急医疗服务司』</p>
+<p class="doc-li">『人事和教育司』</p>
+<p class="doc-li">『后勤保障司』</p>
+<p class="doc-h">【职称等级】</p>
+<p class="doc-li">学员</p>
+<p class="doc-li">科员（消防员、急救员等是职位而非职称）</p>
+<p class="doc-li">高级科员</p>
+<p class="doc-li">主任</p>
+<p class="doc-li">区域总管助理</p>
+<p class="doc-li">区域总管</p>
+<p class="doc-li">副局长</p>
+<p class="doc-li">局长</p>
+</div></div>
         </div>
         <div id="dir-content-official-inner-6" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content"><p>该档案尚未收录。请先查看官方组织列表：现实腐蚀遏制组织 R.C.C.O.、梦羊城市政府、神炼局、梦羊城警察局 I.S.P.D.、应急管理局 I.S.E.M.A.。</p></div></div>
         </div>
         <div id="dir-content-official-inner-7" class="dir-specific-content" style="display: none;">
-          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">内容待编辑</div></div>
+          <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content"><p>该档案尚未收录。请先查看官方组织列表：现实腐蚀遏制组织 R.C.C.O.、梦羊城市政府、神炼局、梦羊城警察局 I.S.P.D.、应急管理局 I.S.E.M.A.。</p></div></div>
         </div>
 
         <div id="dir-content-civilian-inner-1" class="dir-specific-content" style="display: none;">
@@ -4194,7 +4619,7 @@
                   <div class="dh-mid-text">
                       <h2>玩家设表</h2>
                       <p>玩家设表是创建角色时使用的核心工具，用于记录角色的各项属性和背景信息。</p>
-                      <p>请按照模板要求认真填写，这将是你在梦羊城冒险旅程的起点。</p>
+                      <p>请按照模板要求认真填写，这将是你在梦羊城冒险旅程的起点。填好后发到审群等待审核。</p><table class="sheet-table"><tbody><tr><th>角色名</th><td></td></tr><tr><th>种族</th><td>人类 / 精灵 / 矮人 / 兽人 / 亚人 / 血族（详见「种族」页）</td></tr><tr><th>年龄 / 性别</th><td></td></tr><tr><th>职业 / 身份</th><td></td></tr><tr><th>主干神秘术</th><td>只能写一个主干（详见「神秘术」页）</td></tr><tr><th>分支神秘术</th><td>数量有限，且须与主干明显相关</td></tr><tr><th>背景经历</th><td></td></tr><tr><th>性格 / 外貌</th><td></td></tr><tr><th>备注</th><td>义体、炼金造物、术式刻章等请在此注明</td></tr></tbody></table>
                   </div>
               </div>
               <div class="dh-col-right">
@@ -4216,7 +4641,7 @@
                   <div class="dh-mid-text">
                       <h2>物品设表</h2>
                       <p>物品设表用于登记和管理游戏中出现的各种道具、装备和消耗品。</p>
-                      <p>每件物品都有其独特的属性和用途，合理使用是通关的关键。</p>
+                      <p>每件物品都有其独特的属性和用途，合理使用是通关的关键。</p><table class="sheet-table"><tbody><tr><th>物品名</th><td></td></tr><tr><th>类型</th><td>道具 / 装备 / 消耗品 / 术式刻章 / 炼金造物</td></tr><tr><th>来源</th><td></td></tr><tr><th>效果</th><td></td></tr><tr><th>限制</th><td>例如术式刻章有保质期、会随使用次数减弱，部分为一次性</td></tr><tr><th>备注</th><td></td></tr></tbody></table>
                   </div>
               </div>
               <div class="dh-col-right">
@@ -4238,7 +4663,7 @@
                   <div class="dh-mid-text">
                       <h2>自制副本</h2>
                       <p>自制副本是玩家社区创作的精彩冒险内容，由资深玩家设计并经审核团队检验。</p>
-                      <p>每个副本都有独特的剧情、敌人和奖励，为你的冒险增添无限可能。</p>
+                      <p>每个副本都有独特的剧情、敌人和奖励，为你的冒险增添无限可能。投稿前请先自查以下内容，齐全后再发给审核团队：</p><table class="sheet-table"><tbody><tr><th>副本名</th><td></td></tr><tr><th>剧情概要</th><td></td></tr><tr><th>推荐人数 / 时长</th><td></td></tr><tr><th>敌人与奖励</th><td></td></tr><tr><th>涉及设定</th><td>如用到现实腐蚀、神、权柄等，请注明出处页</td></tr></tbody></table>
                   </div>
               </div>
               <div class="dh-col-right">
@@ -10432,7 +10857,7 @@
                 ctx.fillRect(this.x, this.y, this.w, this.h);
             }
         }
-        const dataBars = Array.from({length: 80}, () => new DataBar());
+        const dataBars = Array.from({length: 30}, () => new DataBar());
 
         class Bubble {
             constructor() {
@@ -10468,7 +10893,7 @@
                 ctx.fill();
             }
         }
-        const bubbles = Array.from({length: 50}, () => new Bubble());
+        const bubbles = Array.from({length: 20}, () => new Bubble());
 
         let vibrationTime = 0;
         let twisterTime = 0;
@@ -10493,7 +10918,7 @@
             bgCtx.lineWidth = 1.2;
 
             bgCtx.beginPath();
-            for (let y = 0; y <= ch; y += 5) {
+            for (let y = 0; y <= ch; y += 10) {
                 let progress = y / ch;
                 let baseX = progress * cw; 
                 let env = Math.sin(progress * Math.PI);
@@ -10506,7 +10931,7 @@
             bgCtx.stroke();
 
             bgCtx.beginPath();
-            for (let y = 0; y <= ch; y += 5) {
+            for (let y = 0; y <= ch; y += 10) {
                 let progress = y / ch;
                 let baseX = cw - progress * cw; 
                 let env = Math.sin(progress * Math.PI);
@@ -10537,7 +10962,7 @@
                 currentBeat = Math.pow(Math.sin(beatProgress * Math.PI), 4);
             }
             
-            for(let x = 0; x < cw; x += 2) {
+            for(let x = 0; x < cw; x += 4) {
                 let cx = cw / 2;
                 let dx = x - cx;
                 
@@ -10571,32 +10996,30 @@
             bgCtx.strokeStyle = 'rgba(0, 0, 0, 0.035)';
             bgCtx.lineWidth = 1;
             bgCtx.beginPath();
-            for(let x = 0; x <= cw; x += 30) {
+            for(let x = 0; x <= cw; x += 60) {
                 bgCtx.moveTo(x, 0); bgCtx.lineTo(x, ch);
             }
-            for(let y = 0; y <= ch; y += 30) {
+            for(let y = 0; y <= ch; y += 60) {
                 bgCtx.moveTo(0, y); bgCtx.lineTo(cw, y);
             }
             bgCtx.stroke();
         }
 
-        function renderBg() {
+        // 修复：原来每帧画两条扭曲线 + 全宽频谱 + 网格 + 80 条数据条，
+    // 在普通电脑上也很吃性能。限制到约 30fps，且页面切到后台时暂停。
+        let lastBgFrame = 0;
+        function renderBg(ts) {
+            requestAnimationFrame(renderBg);
+            if (document.hidden) return;
+            if (ts && ts - lastBgFrame < 33) return;
+            lastBgFrame = ts || 0;
             bgCtx.fillStyle = '#ffffff';
             bgCtx.fillRect(0, 0, cw, ch);
-            
             drawTwistingLines();
-            bubbles.forEach(b => { 
-                b.update(); 
-                b.draw(bgCtx, twisterTime); 
-            });
-
+            bubbles.forEach(b => { b.update(); b.draw(bgCtx, twisterTime); });
             drawDynamicSpectrum();
-            
             dataBars.forEach(b => { b.update(); b.draw(bgCtx); });
-            
             drawGrid();
-            
-            requestAnimationFrame(renderBg);
         }
         renderBg();
     })();
@@ -10625,7 +11048,7 @@
         "准备用户界面..."
       ];
 
-      const totalDuration = 3000;
+      const totalDuration = 1800;
       let startProgressTime = null;
 
       function updateBootProgress(timestamp) {
@@ -10674,7 +11097,8 @@
 
       setTimeout(runBootSequence, 100);
 
-      bootStartBtn.addEventListener('click', () => {
+      const dismissBoot = () => {
+        if (bootScreen.style.display === 'none') return;
         bootScreen.style.transition = 'opacity 0.6s ease';
         bootScreen.style.opacity = '0';
         setTimeout(() => {
@@ -10683,7 +11107,12 @@
               startGlintScan();
           }
         }, 600);
-      });
+      };
+      bootStartBtn.addEventListener('click', dismissBoot);
+      // 修复：开场画面原来只能等打字跑完再点 START，点别处没反应。
+      // 现在点画面任意处或按 Enter 也能跳过。
+      bootScreen.addEventListener('click', (e) => { if (e.target !== bootStartBtn) dismissBoot(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Enter' && bootScreen.style.display !== 'none') dismissBoot(); });
     });
 
     const navHome = document.getElementById('nav-home');
@@ -10778,6 +11207,20 @@
       panelSheets.classList.remove('active');
       panelGroup.classList.remove('active');
     }
+    // 修复：菜单原来只能点右上角 Close 或再点一次按钮才能关，
+    // 点页面空白处、按 Esc、滚动页面都关不掉，看起来像卡住了。
+    document.addEventListener('click', function(e) {
+      const open = panelWiki.classList.contains('active') || panelSheets.classList.contains('active') || panelGroup.classList.contains('active');
+      if (!open) return;
+      if (e.target.closest('.sub-panel') || e.target.closest('.nav-links') || e.target.closest('#nav-home')) return;
+      closeAllPanels();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeAllPanels();
+        if (typeof window.closeDynPanel === 'function') window.closeDynPanel();
+      }
+    });
 
     btnWiki.addEventListener('click', function(e) {
       e.preventDefault();
@@ -10813,35 +11256,22 @@
     const loadingFill = document.getElementById('loading-fill');
     const loadingText = document.getElementById('loading-text');
 
+    // 修复：原来每次跳转都要全屏黑屏 + 进度条跑 1.2 秒。
+    // 现在只做一次 180ms 的淡入淡出，不再遮住页面；开场 boot 画面不受影响。
     function playTransitionAnimation(callback) {
-      closeAllPanels(); 
-      triggerSentryScan(); 
-
-      loadingOverlay.style.display = 'flex';
-      loadingFill.style.width = '0%';
-      loadingText.innerText = '0%';
-
-      let startTimestamp = null;
-      const duration = 1200; 
-
-      function step(timestamp) {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const elapsed = timestamp - startTimestamp;
-        
-        let progress = Math.min(elapsed / duration, 1);
-        
-        loadingFill.style.width = (progress * 100) + '%';
-        loadingText.innerText = Math.floor(progress * 100) + '%';
-
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        } else {
-          if (callback) callback();
-          loadingOverlay.style.display = 'none';
-        }
-      }
-
-      window.requestAnimationFrame(step);
+      closeAllPanels();
+      if (typeof window.closeDynPanel === 'function') window.closeDynPanel();
+      const view = directoryView.style.display === 'block' ? directoryView : homeView;
+      if (view) { view.style.transition = 'opacity 180ms ease'; view.style.opacity = '0'; }
+      window.setTimeout(() => {
+        if (callback) callback();
+        if (view) { view.style.opacity = '1'; }
+        mainContentScrollTop();
+      }, 180);
+    }
+    function mainContentScrollTop() {
+      const mc = document.querySelector('.main-content');
+      if (mc) mc.scrollTop = 0;
     }
 
     navHome.addEventListener('click', function(e) {
@@ -10976,7 +11406,25 @@
         articleList.appendChild(article);
       });
 
-      container.append(index, articleList);
+      const indexBar = document.createElement('div');
+      indexBar.className = 'archive-index-bar';
+
+      const collapseBtn = document.createElement('button');
+      collapseBtn.type = 'button';
+      collapseBtn.className = 'archive-collapse-btn';
+      collapseBtn.textContent = '一键收起';
+      collapseBtn.addEventListener('click', function() {
+        container.querySelectorAll('.company-doc-article.expanded, .civilian-doc-article.expanded').forEach(function(a) {
+          a.classList.remove('expanded');
+          a.style.maxHeight = '0px';
+        });
+        container.querySelectorAll('.company-index-card.active, .civilian-index-card.active').forEach(function(c) {
+          c.classList.remove('active');
+        });
+      });
+
+      indexBar.append(index, collapseBtn);
+      container.append(indexBar, articleList);
     }
 
     function buildCivilianArchive() {
@@ -10992,8 +11440,12 @@
       Array.from(sourceBody.children).forEach(node => {
         const styleName = node.getAttribute('data-source-style') || '';
         const sourceText = (node.getAttribute('data-source-text') || node.textContent || '').trim();
+
+        // 跳过无意义的“帮派”一级标题（它只是一个分组外壳，不承载内容）
+        if (styleName === 'Heading 1' && sourceText === '帮派') return;
+
         const startsOrganization = styleName === 'Heading 2'
-          || (styleName === 'Heading 1' && sourceText.length > 0 && sourceText !== '帮派');
+          || (styleName === 'Heading 1' && sourceText.length > 0);
 
         if (startsOrganization) {
           currentGroup = { title: sourceText, nodes: [node] };
@@ -11055,7 +11507,25 @@
         articleList.appendChild(article);
       });
 
-      container.append(index, articleList);
+      const indexBar = document.createElement('div');
+      indexBar.className = 'archive-index-bar';
+
+      const collapseBtn = document.createElement('button');
+      collapseBtn.type = 'button';
+      collapseBtn.className = 'archive-collapse-btn';
+      collapseBtn.textContent = '一键收起';
+      collapseBtn.addEventListener('click', function() {
+        container.querySelectorAll('.company-doc-article.expanded, .civilian-doc-article.expanded').forEach(function(a) {
+          a.classList.remove('expanded');
+          a.style.maxHeight = '0px';
+        });
+        container.querySelectorAll('.company-index-card.active, .civilian-index-card.active').forEach(function(c) {
+          c.classList.remove('active');
+        });
+      });
+
+      indexBar.append(index, collapseBtn);
+      container.append(indexBar, articleList);
     }
 
     replaceDocumentText('dir-content-mengyang', '.dh-mid-text', ['梦羊城Imagine Sheep City'], false);
@@ -11122,7 +11592,7 @@
                 const fb = firstWrapper.querySelector('.dir-body-text');
                 if (fb) {
                   const fh = fb.scrollHeight;
-                  fb.style.setProperty('--feed-duration', Math.min(6, Math.max(2.5, fh / 200)) + 's');
+                  fb.style.setProperty('--feed-duration', '0.45s');
                   fb.style.maxHeight = fh + 'px';
                 }
               }
@@ -11161,7 +11631,7 @@
         if (body) {
           if (!wasExpanded) {
             const bh = body.scrollHeight;
-            body.style.setProperty('--feed-duration', Math.min(6, Math.max(2.5, bh / 200)) + 's');
+            body.style.setProperty('--feed-duration', '0.45s');
             body.style.maxHeight = bh + 'px';
           } else {
             body.style.maxHeight = '0px';
@@ -11191,7 +11661,7 @@
           article.classList.add('expanded');
           const h = article.scrollHeight;
           const dur = Math.min(7, Math.max(3, h / 250));
-          article.style.setProperty('--feed-duration', dur + 's');
+          article.style.setProperty('--feed-duration', '0.5s');
           article.style.maxHeight = h + 'px';
           card.classList.add('active');
           article.querySelectorAll('img').forEach(function(img) {
@@ -11199,14 +11669,14 @@
             img.addEventListener('load', function() {
               if (article.classList.contains('expanded')) {
                 const nh = article.scrollHeight;
-                article.style.setProperty('--feed-duration', Math.min(7, Math.max(3, nh / 250)) + 's');
+                article.style.setProperty('--feed-duration', '0.5s');
                 article.style.maxHeight = nh + 'px';
               }
             }, { once: true });
           });
           window.setTimeout(function() {
             article.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 90);
+          }, 550);
         }
       });
     })();
@@ -11609,6 +12079,9 @@
     })();
 
     (function initCursorFX() {
+        // 修复：原来鼠标拖尾是全屏画布 + 每帧三遍描边 + shadowBlur 20~30，
+        // 又抢眼又耗性能，录屏里那条绿/青色光带就是它。直接停用，保留正常鼠标。
+        return;
         if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
         const canvas = document.createElement('canvas');
         canvas.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:9998;';
@@ -11897,6 +12370,8 @@
             isOpen = false;
             currentCard = null;
         }
+        // 供页面跳转 / Esc 调用：关掉详情弹窗
+        window.closeDynPanel = closePanel;
 
         document.querySelectorAll('.dyn-card').forEach((card, i) => {
             if (!card.querySelector('.dyn-card-ripple')) {
@@ -11919,20 +12394,10 @@
             });
         });
 
-        if (mainContent) {
-            const cardObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.5 && isOpen) {
-                        if (currentCard !== entry.target) {
-                            currentCard = entry.target;
-                            fillPanel(entry.target);
-                        }
-                    }
-                });
-            }, { root: mainContent, threshold: [0.5, 0.7] });
-
-            document.querySelectorAll('.dyn-card').forEach(card => cardObserver.observe(card));
-        }
+        // 修复：原来面板打开后，只要滚动首页、任意一张卡片过半进入视野，
+        // 面板内容就会自动换成那张卡片，用户点开 A、滚一下就变成 B。
+        // 已删除自动切换：只有点 EXPLORE 才会换内容。
+        window.closeDynPanel = closePanel;
 
         closeBtn.addEventListener('click', closePanel);
     })();
