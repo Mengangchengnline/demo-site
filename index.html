@@ -1919,6 +1919,42 @@
     border-color: #00f3ff;
   }
 
+  /* 官方组织详情页返回按钮：详情页原来没有任何返回入口，点“进入详情”
+     后只能靠顶部导航离开。现在每页顶部加一个吸顶的 × 按钮，点一下
+     回到官方组织列表；长页面往下滚时按钮会跟着停在顶部。 */
+  .inner-back-bar {
+    position: sticky;
+    top: calc(100vh / 15 + 12px);
+    z-index: 30;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+    pointer-events: none;
+  }
+  .inner-close-btn {
+    pointer-events: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Orbitron', 'Microsoft YaHei', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #FF8C00;
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid rgba(255, 140, 0, 0.5);
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.25);
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .inner-close-btn span { font-size: 0.85rem; }
+  .inner-close-btn:hover {
+    color: #00f3ff;
+    border-color: #00f3ff;
+    box-shadow: 0 0 16px rgba(0, 243, 255, 0.4);
+  }
+
   .editable-content {
     width: 100%;
     min-height: 40vh;
@@ -3888,7 +3924,7 @@
 
               <div class="dyn-card fx-reveal" style="transition-delay:0.15s;">
                 <div class="dyn-card-sweep"></div>
-                <img src="city-street-night.jpg" alt="前会长神秘横死" class="dyn-card-img">
+                <img src="78a616a24afd9dc9cfd7ba116d4b9fc5.jpg" alt="前会长神秘横死" class="dyn-card-img">
                 <div class="dyn-card-title">前会长神秘横死，洽录会悬重金缉凶</div>
                 <div class="dyn-card-text">洽录会前会长藤原雅人于一周前离奇死亡，案件目前仍在调查当中，洽录会开出高额赏金缉拿凶手。</div>
                 <div class="dyn-card-bottom"><button class="dyn-card-explore">EXPLORE</button></div>
@@ -4247,6 +4283,7 @@
           </div>
         </div>
         <div id="dir-content-official-inner-1" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
 <p class="doc-p">RCCO是根据RCCA建立的全球性组织，负责一切和现实腐蚀有关的事务，无论牵扯到什么，只要跟腐蚀沾上一点，他们就有权力介入甚至接管此事。RCCO素来以“不讲道理”的强硬态度闻名，一方面是因为他们的确享有非常高的执法权，甚至不需要法院或检察院的任何批准就可以实施搜查和逮捕；另一方面是因为他们认为自己的所作所为是在保护文明，对于某些人来说，为了让文明延续而牺牲一些礼貌和道德，非常划算。</p>
 <p class="doc-h">【组织架构】</p>
@@ -4269,6 +4306,7 @@
 </div></div>
         </div>
         <div id="dir-content-official-inner-2" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
 <p class="doc-h">概述</p>
 <p class="doc-p">梦羊城是一座资本主义制度下的自由民主城市，市民通过不记名的方式民主选出市长和101名市议会议员——至少宣传册上没有提到公司操控政治的事，至于现实情况是什么你就别问了，那对你身体没好处。</p>
@@ -4277,6 +4315,7 @@
 </div></div>
         </div>
         <div id="dir-content-official-inner-3" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
 <p class="doc-p">神秘术和炼金术是比较唯心的东西，但它们的管理必须唯物。为了规范梦羊城内神秘术和炼金术的合理使用，市政府专门成立了梦羊城神秘术和炼金术管理局，简称“神炼局”，或者玩梗一点，你也可以叫他们“蝙蝠”。</p>
 <p class="doc-p">神炼局是这座城市的《神秘术、神秘术士和神秘术制品、炼金术和炼金术造物管理法》的主要执法单位，主要职责便是根据该法律的条款，对私人，企业及组织持有的一系列制品或在市面上流通的制品进行评级，收缴，同时对违反该法律的团体及个人进行抓捕，并依法进行处罚。此外，神炼局亦承担着统计、管理、教育梦羊城城内的神秘术士和炼金术士</p>
@@ -4298,6 +4337,7 @@
 </div></div>
         </div>
         <div id="dir-content-official-inner-4" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
 <p class="doc-p">如果要选举梦羊城最苦逼的政府机构，那ISPD一定榜上有名。这个由5万多人组成的执法机构负责梦羊城的治安，从忘带钥匙到杀人放火，只要是条子应该干的事，ISPD都得去干。但ISPD远没有想象中的威风，梦羊城是一个巨大的舞台，ISPD就是舞台边缘的剧场保安。他不能把台上的演员赶走，更不能惹恼台下的观众，恰好卡在一个尴尬的位置。腐败司空见惯，暗杀和袭击屡见不鲜，ISPD就这样如履薄冰的度过每一天——好吧，犯罪率还是降不下来。</p>
 <p class="doc-h">【组织架构】</p>
@@ -4327,6 +4367,7 @@
 </div></div>
         </div>
         <div id="dir-content-official-inner-5" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content">
 <p class="doc-p">火灾、心梗、溺水……当你需要急救但又不是安全国际会员的时候，ISEA将会是你最后的希望，虽然他们的出警也要收费。ISEMA的使命是在灾难发生之前、期间和之后为人们提供帮助。他们与个人和公司合作，通过积极的社区动员、培训、教育和规划来促进居民积极主动地为潜在的紧急情况和灾难做好准备。灾难降临之后，应急管理部将协调派遣可用的力量进行救援，力求在赢利的同时将灾情损失降至最低。灾难发生后，他们帮助社区重建更强大的社区，以减少未来的灾害损失并提高社区的恢复力。</p>
 <p class="doc-h">【组织架构】</p>
@@ -4347,9 +4388,11 @@
 </div></div>
         </div>
         <div id="dir-content-official-inner-6" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content"><p>该档案尚未收录。请先查看官方组织列表：现实腐蚀遏制组织 R.C.C.O.、梦羊城市政府、神炼局、梦羊城警察局 I.S.P.D.、应急管理局 I.S.E.M.A.。</p></div></div>
         </div>
         <div id="dir-content-official-inner-7" class="dir-specific-content" style="display: none;">
+          <div class="inner-back-bar"><button type="button" class="inner-close-btn nav-trigger" data-dir="official-org" data-title="官方组织" aria-label="返回官方组织列表">× <span>返回官方组织</span></button></div>
           <div class="dir-content-wrapper"><div class="dir-sub-title">详细档案</div><div class="dir-divider"></div><div class="editable-content"><p>该档案尚未收录。请先查看官方组织列表：现实腐蚀遏制组织 R.C.C.O.、梦羊城市政府、神炼局、梦羊城警察局 I.S.P.D.、应急管理局 I.S.E.M.A.。</p></div></div>
         </div>
 
