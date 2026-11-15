@@ -2067,6 +2067,7 @@
     color: #FF8C00;
     letter-spacing: 0.08em;
     padding: 0.7rem 0.9rem;
+    border-top: 1px solid rgba(255, 140, 0, 0.5);
     border-bottom: 1px solid rgba(255, 140, 0, 0.5);
     background: rgba(255, 140, 0, 0.07);
     white-space: nowrap;
@@ -2082,6 +2083,16 @@
 
   .cv-table tbody tr:hover td {
     background: rgba(255, 140, 0, 0.04);
+  }
+
+  .cv-table thead th:first-child,
+  .cv-table tbody td:first-child {
+    border-left: 1px solid rgba(255, 140, 0, 0.3);
+  }
+
+  .cv-table thead th:last-child,
+  .cv-table tbody td:last-child {
+    border-right: 1px solid rgba(255, 140, 0, 0.3);
   }
 
   .cv-lv {
